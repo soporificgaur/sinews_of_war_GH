@@ -1,4 +1,4 @@
-# sinews_of_war_GH
+# Godherja & Sinews of War Compatch
 Credit to the authors of both mods, and to the author of the initial compatch off of which this is based!  
 Get more info on each at:  
 Godherja: https://discord.gg/KuMECRsH  
