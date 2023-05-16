@@ -1,0 +1,425 @@
+﻿
+### Cultural trigger list
+
+# drinks_alcohol_trigger - Would this person drink alcohol?
+# holder_or_above_is_player_of_culture - Is this county's holder or anyone above them in the de facto hierarchy a player with the same culture?
+
+
+######################
+# Cultural triggers  #
+######################
+
+drinks_alcohol_trigger = {
+	has_trait = drunkard
+}
+
+holder_or_above_is_player_of_culture = {
+	culture = {
+		save_temporary_scope_as = this_culture
+	}
+	OR = {
+		holder = {
+			AND = {
+				is_ai = no
+				culture = scope:this_culture
+			}
+			any_liege_or_above = {
+				is_ai = no
+				culture = scope:this_culture
+			}
+		}
+	}
+}
+
+culture_in_winter_geographical_region_trigger = {
+	custom_description = {
+		text = culture_in_winter_geographical_region_trigger_desc
+		any_culture_county = {
+			any_county_province = {
+				OR = {
+					geographical_region = world_ga_lichdoms
+					geographical_region = world_ga_marcher_kingdoms
+					geographical_region = world_ga_clanlands
+					geographical_region = mayikprolollan_biozone
+					geographical_region = world_ga_foglands
+				}
+			}
+		}
+	}
+}
+
+culture_in_non_sedentary_geographical_region_trigger = {
+	custom_description = {
+		text = culture_in_non_sedentary_geographical_region_trigger_desc
+		any_culture_county = {
+			any_county_province = {
+				OR = {
+					geographical_region = world_ga_aironoi
+				}
+			}
+		}
+	}
+}
+
+culture_not_pacifistic_trigger = {
+	custom_description = {
+		text = culture_not_pacifist_trigger_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_pacifism }
+		}
+	}
+}
+
+culture_not_warlike_trigger = {
+	custom_description = {
+		text = culture_not_warlike_trigger_desc
+		NOR = {
+			any_in_list = { list = traits this = flag:tradition_winter_warriors }
+			any_in_list = { list = traits this = flag:tradition_forest_fighters }
+			any_in_list = { list = traits this = flag:tradition_mountaineers }
+			any_in_list = { list = traits this = flag:tradition_warriors_of_the_dry }
+			any_in_list = { list = traits this = flag:tradition_highland_warriors }
+			any_in_list = { list = traits this = flag:tradition_jungle_warriors }
+			any_in_list = { list = traits this = flag:tradition_quarrelsome }
+			any_in_list = { list = traits this = flag:tradition_malleable_invaders }
+			any_in_list = { list = traits this = flag:tradition_hunters }
+			any_in_list = { list = traits this = flag:tradition_warrior_culture }
+			any_in_list = { list = traits this = flag:tradition_martial_admiration }
+			any_in_list = { list = traits this = flag:tradition_redlanders }
+		}
+	}
+	custom_description = {
+		text = culture_has_winter_warriors_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_winter_warriors }
+		}
+	}
+	custom_description = {
+		text = culture_has_forest_fighter_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_forest_fighters }
+		}
+	}
+	custom_description = {
+		text = culture_has_mountaineers_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_mountaineers }
+		}
+	}
+	custom_description = {
+		text = culture_has_warriors_of_the_dry_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_warriors_of_the_dry }
+			any_in_list = { list = traits this = flag:tradition_redlanders }
+		}
+	}
+	custom_description = {
+		text = culture_has_highland_warriors_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_highland_warriors }
+		}
+	}
+	custom_description = {
+		text = culture_has_jungle_warriors_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_jungle_warriors }
+		}
+	}
+	custom_description = {
+		text = culture_has_quarrelsome_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_quarrelsome }
+		}
+	}
+	custom_description = {
+		text = culture_has_malleable_invaders_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_malleable_invaders }
+		}
+	}
+	custom_description = {
+		text = culture_has_hunters_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_hunters }
+		}
+	}
+	custom_description = {
+		text = culture_has_warrior_culture_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_warrior_culture }
+		}
+	}
+	custom_description = {
+		text = culture_has_martial_admiration_desc
+		NOT = {
+			any_in_list = { list = traits this = flag:tradition_martial_admiration }
+		}
+	}
+}
+
+should_have_same_faith_succession_trigger = {
+	culture = {
+		has_cultural_parameter = same_faith_inheritance_only
+	}
+	NOR = {
+		has_government = theocracy_government # Handled separately
+		has_government = holy_order_government # Handled separately
+		has_government = mercenary_government # Irrelevant
+	}
+}
+
+not_tribal_raid_trigger = {
+	culture = {
+		has_cultural_parameter = not_tribal_pirate_raiding_malus
+	}
+	NOR = { 
+		has_government = tribal_government
+		has_government = pirate_government 
+	}
+}
+
+# TODO: Update this stuff with proper information
+culture_is_not_historical_hybrid_trigger = {
+	#Used to tell if a hybrid culture is one of the historical hybrids or not, mainly in checks for AI hybridization checks related to game rules.
+	#Expects to be used in culture scope
+	always = yes
+}
+
+# Cultural MAA triggers - Used in various places for triggers, AI weights, etc.
+culture_has_skirmisher_maa = {
+	OR = {
+		has_innovation = innovation_berserkers
+		has_innovation = innovation_moonkin
+		has_innovation = innovation_wodes
+		has_innovation = innovation_eastern_cav
+		has_innovation = innovation_bloodbound
+		has_innovation = innovation_legion_raiders
+		has_innovation = innovation_legion_marines
+	}
+}
+
+culture_has_archer_maa = {
+	OR = {
+		has_innovation = innovation_the_bloodied
+		has_innovation = innovation_adabyss
+	}
+}
+
+culture_has_heavy_infantry_maa = {
+	OR = {
+		has_cultural_parameter = unlock_maa_mubaaizun
+		has_innovation = innovation_aversarian_legionaires
+		has_innovation = innovation_doriosian_reforms
+		has_innovation = innovation_anti_magic_combat
+		has_innovation = innovation_adabyss
+		has_innovation = innovation_north_shields
+		has_innovation = innovation_home_legions
+	}
+}
+
+culture_has_pikemen_maa = { #I.e. Spearmen
+	OR = {
+		has_innovation = innovation_konijkmener_pikes
+		has_innovation = innovation_golden_spears
+		has_innovation = innovation_pure_pikes
+	}
+}
+
+culture_has_light_cavalry_maa = {
+	OR = {
+		has_innovation = innovation_prophets_sons
+		has_innovation = innovation_duneriders
+		has_innovation = innovation_brother_riders
+		has_innovation = innovation_legion_outriders 
+	}
+}
+
+culture_has_heavy_cavalry_maa = {
+	OR = {
+		has_innovation = innovation_eastern_cav 
+		has_innovation = innovation_grave_wardens
+		has_innovation = innovation_griffon_riders
+		has_innovation = innovation_chariots
+		has_innovation = innovation_flying_lances
+		has_innovation = innovation_marcher_knights
+	}
+}
+
+culture_has_archer_cavalry_maa = {
+	has_cultural_parameter = unlock_maa_horse_archers
+}
+
+# Language trigger - Makes languages available when you diverge your culture
+language_is_shown_trigger = {
+	scope:character = {
+		# The target language needs to fulfill ALL of the following:
+		any_sub_realm_county = { # Language needs to be well-represented within your realm
+			percent >= 0.1
+			culture = { has_cultural_pillar = $LANGUAGE$ }
+		}
+		any_sub_realm_county = { # Language needs to border your own culture
+			culture = { has_cultural_pillar = $LANGUAGE$ }
+			any_neighboring_county = {
+				culture = { this = scope:character.culture }
+			}
+		}
+		any_sub_realm_county = { # You need a minimum acceptance with any culture speaking the language
+			culture = {
+				has_cultural_pillar = $LANGUAGE$
+				cultural_acceptance = {
+					target = scope:character.culture
+					value >= 25
+				}
+			}
+		}
+	}
+}
+
+# Checks if you could Hybridise with the culture without checking for acceptance
+is_valid_for_hybridising_trigger = {
+	$CHARACTER$ = {
+		culture = {
+			NOT = { has_same_culture_heritage = $CULTURE$ }
+			culture_age >= culture_hybrid_cooldown
+		}
+		custom_description = {
+			text = culture_present_in_realm_for_hybridization
+			any_sub_realm_county = {
+				culture = $CULTURE$
+			}
+		}
+		custom_description = {
+			text = culture_is_not_parent_culture
+			culture = {
+				NOT = {
+					any_parent_culture = {
+						this = $CULTURE$
+					}
+				}
+			}
+		}
+		custom_description = {
+			text = culture_is_not_child_culture
+			$CULTURE$ = {
+				NOT = {
+					any_parent_culture = {
+						this = $CHARACTER$.culture
+					}
+				}
+			}
+		}
+	}
+	$CULTURE$ = {
+		NOT = { 
+			has_variable = culture_forbidden_from_diverging_or_hybridizing
+		}
+	}
+}
+
+# Checks if you can currently hybridise with the culture
+can_hybridize_culture_trigger = {
+	is_valid_for_hybridising_trigger = {
+		CHARACTER = $CHARACTER$
+		CULTURE = $CULTURE$
+	}
+	$CHARACTER$ = {
+		culture = {
+			cultural_acceptance = { target = $CULTURE$ value >= hybridization_threshold_value }
+		}
+	}
+}
+
+
+# Uses current scope and scope:culture
+cultures_share_relevant_region_trigger = {
+	OR = {
+		AND = {
+			culture_overlaps_geographical_region = world_greater_aversaria
+			scope:culture = {
+				culture_overlaps_geographical_region = world_greater_aversaria
+			}
+		}
+		AND = {
+			culture_overlaps_geographical_region = world_ga_aironoi
+			scope:culture = {
+				culture_overlaps_geographical_region = world_ga_aironoi
+			}
+		}
+		AND = {
+			culture_overlaps_geographical_region = world_sarradon
+			scope:culture = {
+				culture_overlaps_geographical_region = world_sarradon
+			}
+		}
+		AND = {
+			culture_overlaps_geographical_region = world_ga_kashirya
+			scope:culture = {
+				culture_overlaps_geographical_region = world_ga_kashirya
+			}
+		}
+	}
+}
+
+###
+
+light_footmen_recruitable_trigger = {
+	culture = { culture_has_skirmisher_maa = no }
+}
+
+bowmen_recruitable_trigger = {
+	culture = {
+		NOT = { has_innovation = innovation_advanced_bowmaking }
+		culture_has_archer_maa = no	
+		culture_has_crossbow_maa = no
+	}
+}
+
+light_horsemen_recruitable_trigger = {
+	culture = { culture_has_light_cavalry_maa = no }
+}
+
+pikemen_recruitable_trigger = {
+	culture = { culture_has_pikemen_maa = no }
+}
+
+armored_footmen_recruitable_trigger = {
+	culture = {
+		has_innovation = innovation_quilted_armor
+		culture_has_heavy_infantry_maa = no
+	}
+}
+
+onagers_recruitable_trigger = {
+	culture = {
+		has_innovation = innovation_catapult
+		NOT = { has_innovation = innovation_mangonel } 
+	} 
+}
+
+armored_horsemen_recruitable_trigger = {
+	culture = {
+		has_innovation = innovation_arched_saddle 
+		culture_has_heavy_cavalry_maa = no
+	} 
+}
+
+mangonel_recruitable_trigger = {
+	culture = {
+		has_innovation = innovation_mangonel
+		NOT = { has_innovation = innovation_trebuchet } 
+	} 
+}
+
+crossbowmen_recruitable_trigger = {
+	culture = {
+		has_innovation = innovation_advanced_bowmaking 
+		NOT = { culture_has_crossbow_maa = yes }
+	} 
+}
+
+trebuchet_recruitable_trigger = {
+	culture = {
+		has_innovation = innovation_trebuchet
+		NOT = { has_innovation = innovation_bombard } 
+	} 
+}

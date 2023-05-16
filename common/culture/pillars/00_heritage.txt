@@ -1,0 +1,327 @@
+﻿heritage_saielaian = {
+	type = heritage
+}
+
+heritage_aversarian = {
+	type = heritage
+}
+
+heritage_sjalvolki = {
+	type = heritage
+}
+
+heritage_marcher = {
+	type = heritage
+}
+
+heritage_iyrossi = {
+	type = heritage
+}
+
+heritage_konijkmener = {
+	type = heritage
+}
+
+heritage_vhanavid = {
+	type = heritage
+}
+
+heritage_kikarsag = {
+	type = heritage
+}
+
+heritage_sarminian = {
+	type = heritage
+}
+
+heritage_sarradonian = {
+	type = heritage
+}
+
+heritage_damotan = {
+	type = heritage
+}
+
+heritage_kashiryan = {
+	type = heritage
+}
+
+heritage_goan = {
+	type = heritage
+}
+
+heritage_dezhunic = {
+	type = heritage
+}
+
+heritage_aekershaani = {
+	type = heritage
+}
+
+heritage_zarasadari = {
+	type = heritage
+}
+
+heritage_thyssae = {
+	type = heritage
+}
+
+heritage_marmaladid = {
+	type = heritage
+}
+
+heritage_kosharan = {
+	type = heritage
+}
+
+heritage_hadiyan = {
+	type = heritage
+}
+heritage_partic = {
+	type = heritage
+}
+
+heritage_vespartsva = {
+	type = heritage
+}
+
+heritage_rekhala = {
+	type = heritage
+}
+heritage_abadelos = {
+	type = heritage
+}
+heritage_aafarzay = {
+	type = heritage
+}
+heritage_adhata = {
+	type = heritage
+}
+heritage_aembarisa = {
+	type = heritage
+}
+heritage_afoseniai = {
+	type = heritage
+}
+heritage_agadari = {
+	type = heritage
+}
+heritage_agnala= {
+	type = heritage
+}
+heritage_anandrasi = {
+	type = heritage
+}
+heritage_arapa = {
+	type = heritage
+}
+heritage_aevakori = {
+	type = heritage
+}
+heritage_asariyna = {
+	type = heritage
+}
+heritage_athacaya = {
+	type = heritage
+}
+heritage_canian = {
+	type = heritage
+}
+heritage_chordhan = {
+	type = heritage
+}
+heritage_daidenos = {
+	type = heritage
+}
+heritage_skoronyk = {
+	type = heritage
+}
+heritage_guillater = {
+	type = heritage
+}
+heritage_daravani = {
+	type = heritage
+}
+heritage_dawic = {
+	type = heritage
+}
+heritage_dayatemi = {
+	type = heritage
+}
+heritage_easterner = {
+	type = heritage
+}
+heritage_emanhi = {
+	type = heritage
+}
+heritage_fog_eaters = {
+	type = heritage
+}
+heritage_gallieni = {
+	type = heritage
+}
+heritage_haraja = {
+	type = heritage
+}
+heritage_huegodoc = {
+	type = heritage
+}
+heritage_karzarad = {
+	type = heritage
+}
+heritage_kelthiunai = {
+	type = heritage
+}
+heritage_khalai = {
+	type = heritage
+}
+heritage_kharadamatian = {
+	type = heritage
+}
+heritage_kemsari = {
+	type = heritage
+}
+heritage_kherkeloi = {
+	type = heritage
+}
+heritage_khokhuud = {
+	type = heritage
+}
+heritage_likarkho = {
+	type = heritage
+}
+heritage_madikirib = {
+	type = heritage
+}
+heritage_margur = {
+	type = heritage
+}
+heritage_mondecny = {
+	type = heritage
+}
+heritage_oghainos = {
+	type = heritage
+}
+heritage_ojyczaynz = {
+	type = heritage
+}
+heritage_redlander = {
+	type = heritage
+}
+heritage_samojitian = {
+	type = heritage
+}
+heritage_saradari = {
+	type = heritage
+}
+heritage_sarridian = {
+	type = heritage
+}
+heritage_shamrania = {
+	type = heritage
+}
+heritage_takopara = {
+	type = heritage
+}
+heritage_theugombrian = {
+	type = heritage
+}
+heritage_tlakalak = {
+	type = heritage
+}
+heritage_xajirkel = {
+	type = heritage
+}
+heritage_zanaumaures = {
+	type = heritage
+}
+heritage_lerrardin = {
+	type = heritage
+}
+heritage_kevaali = {
+	type = heritage
+}
+heritage_nakahanii = {
+	type = heritage
+}
+heritage_kardwen = {
+	type = heritage
+}
+heritage_veparstva = {
+	type = heritage
+}
+heritage_zonthawa = {
+	type = heritage
+}
+heritage_cavetribe = {
+	type = heritage
+}
+heritage_tiemanam = {
+	type = heritage
+}
+heritage_dubadin = {
+	type = heritage
+}
+heritage_dergi = {
+	type = heritage
+}
+heritage_enynanthari = {
+	type = heritage
+}
+heritage_iseni = {
+	type = heritage
+}
+heritage_marndeoticeni = {
+	type = heritage
+}
+heritage_wasteland = {
+	type = heritage
+}
+heritage_balarid = {
+	type = heritage
+}
+heritage_mtuwe = {
+	type = heritage
+}
+heritage_daikheni = {
+	type = heritage
+}
+heritage_lonely_lighter = {
+	type = heritage
+}
+#heritage_bricotaves = {
+#	type = heritage
+#}
+#heritage_ardothanes = {
+#	type = heritage
+#}
+#heritage_ordikin = {
+#	type = heritage
+#}
+#heritage_corvosnari = {
+#	type = heritage
+#}
+heritage_clanlander = {
+	type = heritage
+}
+heritage_ouwabadin = {
+	type = heritage
+}
+heritage_ashkeschi = {
+	type = heritage
+}
+heritage_dadkawji = {
+	type = heritage
+}
+heritage_sagadavian = {
+	type = heritage
+}
+heritage_narodlek = {
+	type = heritage
+}
+heritage_beast = {
+	type = heritage
+}
+heritage_aelfir = {
+	type = aelfir
+}

@@ -1,0 +1,66 @@
+﻿@holding_illustration_lich = "gfx/interface/illustrations/holding_types/necropolis_generic.dds"
+
+###################
+# MAGIC BUILDINGS #
+###################
+
+magic_silver_mine_01 = {
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_mines_mesh"
+	}
+
+	construction_time = slow_construction_time
+
+	type_icon = "icon_structure_mines.dds"
+
+	can_construct_potential = {
+		always = no
+	}
+	
+	cost_gold = expensive_building_tier_3_cost
+	
+	province_modifier = {
+		monthly_income = silver_mine_building_tax_tier_1
+	}
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
+	flag = demd_goods_building
+	flag = demd_goods_building_04
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_04 }
+		reset_regular_building_vars = yes
+	}
+	type = special
+}
+
+necropolis_01 = {
+	construction_time = slow_construction_time
+
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_western_city_02_mesh"
+		}
+		illustration = @holding_illustration_lich
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/western_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { konijkmener_biozone chevalie_biozone lichdoms_biozone migraddar_biozone vyshtanka_biozone knokidbes_biozone southern_kalath_biozone kalath_redwoods_biozone sulzegg_basin_biozone pathos_delta_biozone kalath_old_growth_biozone black_mountains_biozone foglands_biozone whisperveil_biozone mayikprolollan_biozone }
+		graphical_cultures = { western_building_gfx slavic_building_gfx }
+	}
+
+	county_modifier = {
+		fort_level = 7
+		defender_holding_advantage = 25
+	}
+	flag = demd_public_order_building
+	flag = demd_public_order_building_04
+	on_complete = { 
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_04 }
+		reset_regular_building_vars = yes
+	}
+	can_construct_potential = {
+		culture = { has_cultural_parameter = gives_lich_necropolis }
+	}
+}

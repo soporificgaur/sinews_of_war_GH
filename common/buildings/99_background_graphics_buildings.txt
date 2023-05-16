@@ -1,0 +1,394 @@
+﻿# These buildings are only for showing background graphics, e.g. the walls around holdings
+
+# No Walls
+walls_00 = {
+	is_graphical_background = yes
+
+	asset = {
+		type = pdxmesh
+		name = "western_walls_00_mesh"
+	}
+	
+	is_enabled = {
+		OR = {
+			has_holding_type = wasteland_empty_holding
+			AND = {
+				is_county_capital = no
+				fort_level < 1
+				trigger_if = {
+					limit = { exists = county }
+					county = {
+						NOT = { has_county_modifier = fogswept_modifier }
+					}
+				}
+				trigger_else = {
+					always = yes
+				}
+				OR = {
+					AND = {
+						is_county_capital = no
+						fort_level < 1
+					}
+					has_building_or_higher = "thetowerwatch_01"
+				}
+			}
+		}
+	}
+}
+
+# Any city that must be sieged gets the basic walls
+walls_01_tribal = {
+	is_graphical_background = yes
+
+	asset = {
+		type = pdxmesh
+		names = {
+			"tribal_walls_01_a_mesh"
+		}
+	}
+	
+	is_enabled = {
+		NOT = { has_holding_type = wasteland_empty_holding }
+		trigger_if = {
+			limit = { exists = county }
+			county = {
+				NOT = { has_county_modifier = fogswept_modifier }
+			}
+		}
+		trigger_else = {
+			always = yes
+		}
+		OR = {
+			is_county_capital = yes
+			fort_level > 0
+		}
+		NOR = {
+			# disabling this level of walled graphics for holdings with special walls and other fortifications so that they always look appropriately fortified. Note: If any of these buildings are given unique 3D assets, this should be looked at again.
+			has_building_or_higher = "palisades_01"
+			has_building_or_higher = "curtain_walls_01"
+			has_building_or_higher = "hill_forts_01"
+			has_building_or_higher = "ramparts_01"
+			has_building_or_higher = "watchtowers_01"
+			has_building_or_higher = "gh_walls_01"
+			has_building_or_higher = "creusons_01"
+			has_building_or_higher = "thetowerwatch_01"	# Looks ugly with pallisades
+		}
+	}
+}
+
+# Here the Fort Level building chains take control of the visuals
+walls_01 = {
+	is_graphical_background = yes
+	asset = {
+		type = pdxmesh
+		names = {
+			"western_walls_01_a_mesh"
+			"western_walls_01_b_mesh"
+		}
+	}	
+	asset = {
+		type = pdxmesh
+		names = {
+			"mena_walls_01_a_mesh"
+			"mena_walls_01_b_mesh"
+
+		}
+		graphical_regions = {  sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  eripomvuno_biozone central_isles_biozone tower_isles_biozone the_isles_biozone guillate_rocks_biozone imperial_isle_biozone aekershaan_biozone }
+	}
+
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_northern_lords
+		graphical_cultures = { norse_building_gfx }
+		names = {
+			"fp1_norse_walls_01_mesh"
+		}
+	}
+	
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_northern_lords
+		graphical_cultures = { norse_building_gfx }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  eripomvuno_biozone central_isles_biozone tower_isles_biozone the_isles_biozone guillate_rocks_biozone imperial_isle_biozone }
+		names = {
+			"fp1_norse_walls_01_mena_mesh"
+		}
+	}
+
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_fate_of_iberia
+		graphical_cultures = { iberian_building_gfx }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		names = {
+			"fp2_building_iberian_wall_01_mesh"
+		}
+	}
+	
+	is_enabled = {
+		NOT = { has_holding_type = wasteland_empty_holding }
+		trigger_if = {
+			limit = { exists = county }
+			county = {
+				NOT = { has_county_modifier = fogswept_modifier }
+			}
+		}
+		trigger_else = {
+			always = yes
+		}
+		OR = {
+			# These buildings will trigger the visual "upgrade" to this wall asset
+			has_building_or_higher = "palisades_01"
+			has_building_or_higher = "curtain_walls_01"
+			has_building_or_higher = "hill_forts_01"
+			has_building_or_higher = "ramparts_01"
+			has_building_or_higher = "watchtowers_01"
+			has_building_or_higher = "gh_walls_01"
+		}
+		NOR = {
+			# Disabling this level of walled graphics for holdings with special walls and other fortifications so that they always look appropriately fortified. Note: If any of these buildings are given unique 3D assets, this should be looked at again.
+			has_building_or_higher = "palisades_02"
+			has_building_or_higher = "curtain_walls_02"
+			has_building_or_higher = "hill_forts_02"
+			has_building_or_higher = "ramparts_02"
+			has_building_or_higher = "watchtowers_02"
+			has_building_or_higher = "gh_walls_02"
+			has_building_or_higher = "creusons_01"
+		}
+	}
+}
+
+walls_02 = {
+	is_graphical_background = yes
+
+	asset = {
+		type = pdxmesh
+		names = {
+			"western_walls_02_a_mesh"
+			"western_walls_02_a_mesh"
+		}
+	}
+	
+	asset = {
+		type = pdxmesh
+		graphical_regions = {  sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  eripomvuno_biozone central_isles_biozone tower_isles_biozone the_isles_biozone guillate_rocks_biozone imperial_isle_biozone }
+		names = {
+			"mena_walls_02_a_mesh"
+			"mena_walls_02_a_mesh"
+		}
+	}
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_northern_lords
+		graphical_cultures = { norse_building_gfx }
+		names = {
+			"fp1_norse_walls_02_mesh"
+		}
+	}	
+	
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_northern_lords
+		graphical_cultures = { norse_building_gfx }
+		graphical_regions = {  sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  eripomvuno_biozone central_isles_biozone tower_isles_biozone the_isles_biozone guillate_rocks_biozone imperial_isle_biozone }
+		names = {
+			"fp1_norse_walls_02_mena_mesh"
+		}
+	}
+
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_fate_of_iberia
+		graphical_cultures = { iberian_building_gfx }
+			graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		names = {
+			"fp2_building_iberian_wall_02_mesh"
+		}
+	}
+
+	### Donated by Kefir ###
+	#Sahelian
+	asset = {
+		type = pdxmesh
+		names = {
+			"african_walls_02_mesh"
+		}
+		graphical_cultures = { ahridar_building_gfx }
+		graphical_regions = { aekershaan_biozone }
+	}
+	
+	is_enabled = {
+		NOT = { has_holding_type = wasteland_empty_holding }
+		trigger_if = {
+			limit = { exists = county }
+			county = {
+				NOT = { has_county_modifier = fogswept_modifier }
+			}
+		}
+		trigger_else = {
+			always = yes
+		}
+		OR = {
+			# These buildings will trigger the visual "upgrade" to this wall asset
+			has_building_or_higher = "palisades_02"
+			has_building_or_higher = "curtain_walls_02"
+			has_building_or_higher = "hill_forts_02"
+			has_building_or_higher = "ramparts_02"
+			has_building_or_higher = "watchtowers_02"
+			has_building_or_higher = "gh_walls_02"
+		}
+		NOR = {
+			has_building_or_higher = "curtain_walls_03"
+			has_building_or_higher = "hill_forts_03"
+			has_building_or_higher = "ramparts_03"
+			has_building_or_higher = "watchtowers_03"
+			has_building_or_higher = "gh_walls_03"
+			has_building_or_higher = "creusons_01"
+		}
+	}
+}
+
+walls_03 = {
+	is_graphical_background = yes
+
+	asset = {
+		type = pdxmesh
+		names = {
+			"western_walls_03_a_mesh"
+			"western_walls_03_a_mesh"
+		}
+	}
+	
+	asset = {
+		type = pdxmesh
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  eripomvuno_biozone central_isles_biozone tower_isles_biozone the_isles_biozone guillate_rocks_biozone imperial_isle_biozone }
+		names = {
+			"mena_walls_04_a_mesh"
+			"mena_walls_04_a_mesh"
+		}
+	}
+
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_fate_of_iberia
+		graphical_cultures = { iberian_building_gfx }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		names = {
+			"fp2_building_iberian_wall_03_mesh"
+		}
+	}
+
+	### Donated by Sunset Invasion ###
+	# Cemanahuac
+	asset = {
+		type = pdxmesh
+		graphical_cultures = { "cemanahuac_building_gfx" }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  }
+		names = {
+			"cemanahuac_wall_02_mesh"
+			"cemanahuac_wall_02_mesh"
+		}
+	}
+	
+	### Donated by Kefir ###
+	#Sahelian
+	asset = {
+		type = pdxmesh
+		names = {
+			"african_walls_03_mesh"
+		}
+		graphical_cultures = { ahridar_building_gfx }
+		graphical_regions = { aekershaan_biozone }
+	}
+	
+	is_enabled = {
+		NOT = { has_holding_type = wasteland_empty_holding }
+		scope:holder = {
+			NOT = { has_government = tribal_government }
+		}
+		trigger_if = {
+			limit = { exists = county }
+			county = {
+				NOT = { has_county_modifier = fogswept_modifier }
+			}
+		}
+		trigger_else = {
+			always = yes
+		}
+		OR = {
+			# These buildings will trigger the visual "upgrade" to this wall asset
+			has_building_or_higher = "curtain_walls_03"
+			has_building_or_higher = "hill_forts_03"
+			has_building_or_higher = "ramparts_03"
+			has_building_or_higher = "watchtowers_03"
+			has_building_or_higher = "gh_walls_03"
+		}
+	}
+}
+
+walls_04 = {
+	is_graphical_background = yes
+
+	asset = {
+		type = pdxmesh
+		names = {
+			"western_walls_04_a_mesh"
+			"western_walls_04_a_mesh"
+		}
+	}
+	
+	asset = {
+		type = pdxmesh
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  eripomvuno_biozone central_isles_biozone tower_isles_biozone the_isles_biozone guillate_rocks_biozone imperial_isle_biozone }
+		names = {
+			"mena_walls_04_a_mesh"
+			"mena_walls_04_a_mesh"
+		}
+	}
+
+	asset = {
+		type = pdxmesh
+		requires_dlc_flag = the_fate_of_iberia
+		graphical_cultures = { iberian_building_gfx }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone damota_biozone khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone  north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone  krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		names = {
+			"fp2_building_iberian_wall_04_mesh"
+		}
+	}
+	
+	### Donated by Kefir ###
+	#Sahelian
+	asset = {
+		type = pdxmesh
+		names = {
+			"african_walls_04_mesh"
+		}
+		graphical_cultures = { ahridar_building_gfx }
+		graphical_regions = { aekershaan_biozone }
+	}
+	
+	is_enabled = {
+		NOT = { has_holding_type = wasteland_empty_holding }
+		scope:holder = {
+			NOT = { has_government = tribal_government }
+		}
+		trigger_if = {
+			limit = { exists = county }
+			county = {
+				NOT = { has_county_modifier = fogswept_modifier }
+			}
+		}
+		trigger_else = {
+			always = yes
+		}
+		OR = {
+			# These buildings will trigger the visual "upgrade" to this wall asset
+			has_building_or_higher = "curtain_walls_06"
+			has_building_or_higher = "hill_forts_06"
+			has_building_or_higher = "ramparts_06"
+			has_building_or_higher = "watchtowers_06"
+			has_building_or_higher = "gh_walls_04"
+			has_building_or_higher = "creusons_01"
+		}
+	}
+}

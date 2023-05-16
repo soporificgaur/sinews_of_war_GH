@@ -1,0 +1,683 @@
+﻿antimagi_chapterhouse_01 = {
+	construction_time = standard_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = {
+			has_innovation = innovation_anti_magic_combat
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_innovation = innovation_anti_magic_combat
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_1_cost
+
+	character_modifier = {
+		counter_efficiency = 0.05
+	}
+
+	next_building = antimagi_chapterhouse_02
+
+	type_icon = "icon_building_march.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+antimagi_chapterhouse_02 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = {
+			has_innovation = innovation_anti_magic_combat
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_innovation = innovation_burhs
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_2_cost
+
+	character_modifier = {
+		counter_efficiency = 0.10
+		heavy_infantry_damage_mult = 0.03
+		heavy_infantry_toughness_mult = 0.09
+		men_at_arms_maintenance = -0.03
+	}
+
+	county_culture_modifier = {
+		parameter = chevalien_identity
+		hostile_raid_time = 0.1
+		tax_mult = -0.01
+	}
+
+	next_building = antimagi_chapterhouse_03
+
+	type_icon = "icon_building_march.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+antimagi_chapterhouse_03 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = {
+			has_innovation = innovation_anti_magic_combat
+		}
+	}
+
+	can_construct_showing_failures_only = {
+
+		culture = {
+			has_innovation = innovation_castle_baileys
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_3_cost
+
+	character_modifier = {
+		counter_efficiency = 0.15
+		heavy_infantry_damage_mult = 0.06
+		heavy_infantry_toughness_mult = 0.18
+		men_at_arms_maintenance = -0.04
+	}
+
+	county_culture_modifier = {
+		parameter = chevalien_identity
+		tax_mult = -0.02
+		hostile_raid_time = 0.2
+	}
+
+	next_building = antimagi_chapterhouse_04
+
+	type_icon = "icon_building_march.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+antimagi_chapterhouse_04 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = {
+			has_innovation = innovation_anti_magic_combat
+		}
+	}
+
+	can_construct_showing_failures_only = {
+
+		culture = {
+			has_innovation = innovation_royal_armory
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_4_cost
+
+	character_modifier = {
+		counter_efficiency = 0.20
+		heavy_infantry_damage_mult = 0.09
+		heavy_infantry_toughness_mult = 0.27
+		men_at_arms_maintenance = -0.05
+	}
+
+	county_culture_modifier = {
+		parameter = chevalien_identity
+		tax_mult = -0.03
+		hostile_raid_time = 0.4
+		defender_holding_advantage = normal_building_advantage_tier_2
+		additional_fort_level = normal_building_fort_level_tier_1
+	}
+
+	type_icon = "icon_building_march.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+griffon_roost_01 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = {
+			OR = {
+				# Only marchers should be able to see the option to start these
+				has_cultural_pillar = heritage_marcher
+				has_cultural_pillar = heritage_ojyczaynz
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_innovation = innovation_griffon_riders
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_2_cost
+
+	character_modifier = {
+		flying_damage_mult = 0.15
+		flying_toughness_mult = 0.15
+		men_at_arms_maintenance = -0.06
+	}
+
+	next_building = griffon_roost_02
+
+	type = duchy_capital
+
+	type_icon = "icon_building_royal_forest.dds"
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+griffon_roost_02 = {
+	construction_time = very_slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_innovation = innovation_castle_baileys
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_3_cost
+
+	character_modifier = {
+		flying_damage_mult = 0.3
+		flying_toughness_mult = 0.3
+		men_at_arms_maintenance = -0.08
+	}
+
+	character_culture_modifier = {
+		parameter = chevalien_identity
+		prowess = 1
+	}
+
+	type = duchy_capital
+
+	next_building = griffon_roost_03
+
+	type_icon = "icon_building_royal_forest.dds"
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+griffon_roost_03 = {
+	construction_time = very_slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_innovation = innovation_royal_armory
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_4_cost
+
+	character_modifier = {
+		flying_damage_mult = 0.45
+		flying_toughness_mult = 0.45
+		men_at_arms_maintenance = -0.1
+	}
+
+	character_culture_modifier = {
+		parameter = chevalien_identity
+		prowess = 1
+	}
+
+	type = duchy_capital
+
+	type_icon = "icon_building_royal_forest.dds"
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+axe_house_01 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = { has_cultural_parameter = enable_axe_house_building }
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_2_cost
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.10
+		skirmishers_toughness_mult = 0.10
+		skirmishers_pursuit_mult = 0.05
+		monthly_prestige = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_1
+	}
+
+	next_building = axe_house_02
+
+	type_icon = "icon_building_guild_halls.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+axe_house_02 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = { has_cultural_parameter = enable_axe_house_building }
+	}
+
+	can_construct_showing_failures_only = {
+
+		culture = {
+			has_innovation = innovation_burhs
+		}
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_3_cost
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.12
+		skirmishers_toughness_mult = 0.18
+		skirmishers_pursuit_mult = 0.08
+		monthly_prestige = 0.2
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
+
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_2
+	}
+
+	next_building = axe_house_03
+
+	type_icon = "icon_building_guild_halls.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+axe_house_03 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = { has_cultural_parameter = enable_axe_house_building }
+	}
+
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_4_cost
+
+	character_modifier = {
+		skirmishers_damage_mult = 0.18
+		skirmishers_toughness_mult = 0.22
+		skirmishers_pursuit_mult = 0.12
+		skirmishers_recruitment_cost_mult = -0.10
+		monthly_prestige = 0.3
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.15
+	}
+
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_3
+	}
+
+	character_modifier = {
+		diplomacy = 2
+		sway_scheme_power_mult = 0.1
+	}
+
+	type_icon = "icon_building_guild_halls.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+glass_house_duchy_building = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		culture = { has_cultural_parameter = glass_house_duchy_building }
+	}
+	
+	is_enabled = {
+		county.duchy.holder = county.holder
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_4_cost
+
+	character_modifier = {
+		monthly_prestige = 1.5
+		diplomacy = 2
+		monthly_income = 0.5
+	}
+	county_modifier = {
+		development_growth_factor = 0.10
+		tax_mult = 0.05
+	}
+
+	type_icon = "icon_building_longhouses.dds" 
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+###############
+# Crab Ranches
+###############
+
+
+crab_ranch_01 = {
+	construction_time = very_very_quick_construction_time
+
+	can_construct_potential = {
+		culture = { has_cultural_parameter = enable_crab_ranch_duchy_building }
+		county = { has_county_modifier = high_tide_modifier }
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_cultural_tradition = tradition_mutually_beneficial
+		}
+	}
+
+	is_enabled = {
+		county.holder = { has_title = prev.duchy }
+	}
+	show_disabled = yes
+
+	cost_gold = 12
+
+	character_modifier = {
+		stress_gain_mult = -0.10
+
+	}
+
+	province_modifier = {
+		monthly_income = good_building_tax_tier_3
+	}
+
+	duchy_capital_county_modifier = {
+		defender_holding_advantage = normal_building_advantage_tier_2
+		county_opinion_add = 10
+	}
+
+	type = duchy_capital
+	type_icon = "icon_building_palisades.dds"
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+		modifier = { # Fill all building slots before going for duchy buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+	type = duchy_capital
+}
+
+#################################
+# Pirate Coast Spice Plantations
+#################################
+
+mdala_hasira_01 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+		culture = { has_cultural_parameter = enable_mdala_duchy_building }
+		NOR = {
+			terrain = mountains
+			terrain = marcher_mountains
+			terrain = desert
+			terrain = desert_mountains
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		#culture = {
+		#	has_innovation = innovation_manorialism
+		#}
+	}
+	
+	is_enabled = {
+		county.holder = { has_title = prev.duchy }
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	character_modifier = {
+		stress_gain_mult = -0.05
+		court_grandeur_baseline_add = 5
+	}
+	duchy_capital_county_modifier = {
+		county_opinion_add = -5
+	}
+
+	province_modifier = {
+		monthly_income = good_building_tax_tier_6
+	}
+
+	next_building = mdala_hasira_02
+	type_icon = "icon_building_royal_forest.dds"
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+mdala_hasira_02 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_innovation = innovation_windmills
+			has_cultural_parameter = enable_mdala_duchy_building
+		}
+	}
+
+	character_modifier = {
+		stress_gain_mult = -0.10
+		court_grandeur_baseline_add = 10
+		monthly_prestige_gain_mult = 0.05
+	}
+	duchy_capital_county_modifier = {
+		county_opinion_add = -8
+	}
+
+	province_modifier = {
+		monthly_income = excellent_building_tax_tier_7
+	}
+
+	is_enabled = {
+		county.holder = { has_title = prev.duchy }
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_2_cost
+	
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}

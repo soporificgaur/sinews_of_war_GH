@@ -1,0 +1,1016 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# Must be overwritten by patch for other maps!
+#############################################
+
+demd_preprocess_map = { # 5 traditions
+}
+
+##############################################################
+
+demd_postprocess_map = {
+}
+
+##############################################################
+
+demd_set_trade_node_strategic_locations = {
+
+	################
+	# Kashirya
+	################
+	struggle:demd_trade_node_struggle_world_sow_pirate_coast = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hikkaborales } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hayolatt }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kolonawaulla }
+	}
+	struggle:demd_trade_node_struggle_world_sow_s_kashirya = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_moratuvi } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_natawalaga}
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_badulogoda }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_puttapuran }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_south_kashirya_7 }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dadkhar }
+	}
+	struggle:demd_trade_node_struggle_world_sow_n_kashirya = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cumiak } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_maerod }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_valapuiwan }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cuvagarha }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mandaparagh }
+	}
+	
+	################
+	# Aironoi
+	################
+	struggle:demd_trade_node_struggle_world_sow_eastern_aironoi = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zugdhi } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ullabahd }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lugcheg }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_murkher }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sainhad }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_orkattar }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_murun }
+	}
+	struggle:demd_trade_node_struggle_world_sow_western_aironoi = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mallilene } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kannypes }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bhrytenion }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_biliae }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_taragard }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_rizia }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_karyae }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_pergike }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_asiupoli }
+	}
+	struggle:demd_trade_node_struggle_world_sow_great_steppe = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_erderdi } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_koperkanger }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_stahawar }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_siradion }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_holovi }
+	}
+	struggle:demd_trade_node_struggle_world_sow_amaghea = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tsnarketa } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_oni }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ninostaqaro }
+	}
+	struggle:demd_trade_node_struggle_world_sow_krehejad = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_stellios } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_heparthox }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zehthaaa }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zikti }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_krezz }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zartta }
+	}
+	struggle:demd_trade_node_struggle_world_sow_redlands = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_eguur } }
+	}
+	
+	################
+	# Opakhasia
+	################
+	struggle:demd_trade_node_struggle_world_sow_opakhasia = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_elatox } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_rhypacuse }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_salikon }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_lekerio }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_posinda }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_olynthope }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_iolcicus }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tinitida }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hemikon }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_epidetra }
+	}
+	
+	################
+	# Malcois
+	################
+	struggle:demd_trade_node_struggle_world_sow_malcois = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ithi } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_phararnae }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_rhoea }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_messis }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dubes }
+	}
+	
+	################
+	# Etepezea
+	################
+	struggle:demd_trade_node_struggle_world_sow_etepezea = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_rhodara } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_vuonae }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_daykanoss }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zakanixapoli }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zacharae }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_halium }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tominope }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kannystus }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_oraispol }
+	}
+	
+	################
+	# Tower isles something
+	################
+	struggle:demd_trade_node_struggle_world_sow_aversarian_isles = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_pellicrus } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_thebastro }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kyzous }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_palai_zkhni }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zainice }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dragonteeth }
+	}
+	
+	################
+	# Western Clanlands
+	################
+	struggle:demd_trade_node_struggle_world_ga_western_clanlands = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_poios } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ostrozno_brdo }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kankaanviisa } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ottetstift }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_radovesice } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bigelbach }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_oberdessing } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dahlitz } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_halberbracht }
+	}
+	
+	################
+	# Eastern Clanlands 
+	################
+	struggle:demd_trade_node_struggle_world_ga_eastern_clanlands = {	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_cadeni } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sedlovice }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dethiclos } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dammhausen }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bukovsko }	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_krtely } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_unterfahrenbach }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_wollomoos }		
+	}
+	
+	################
+	# Eastern Marcher
+	################
+	struggle:demd_trade_node_struggle_world_ga_eastern_marcher_kingdoms = {	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_troscease } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gradiene }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_yaffenguiem } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_astassus }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_yiuve }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_plaffinmont }		
+	}
+	
+	################
+	# Western Marcher 
+	################
+	struggle:demd_trade_node_struggle_world_ga_western_marcher_kingdoms = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_aastauxporte }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_nambre } 			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_noganad } 
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_grande_gisredde }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_peti_gisredde } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_dontville }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_guizforte }		 
+	}
+	
+	################
+	# Western Isles 
+	################
+	struggle:demd_trade_node_struggle_the_western_isles = {	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_raphaidothex } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_chevalie_islands_6 }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ioulianoseras } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_smli }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_biggestisle }		
+	}
+	
+	################
+	# Sarradon 
+	################
+	struggle:demd_trade_node_struggle_world_sow_southeast_sarradon = {	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tamadra } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_baashaqiq }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_bingost } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sorba }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gatasuq }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_shaqerbi } 				
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_east_sarradon = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_thuwacca }			
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_khotoorah } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_mehmeslu }	
+	}
+	
+	struggle:demd_trade_node_struggle_world_es_hajjan_mountains = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kudahhar }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ash_shabbri }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tel_narn }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gonan } 					
+	}
+	
+	struggle:demd_trade_node_struggle_world_es_damota = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hadewa }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kaletet }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zahali } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_orunlaz }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_gyuzol }		
+	}
+	
+	struggle:demd_trade_node_struggle_world_es_adabyss = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_adabyssfort }		
+	}
+
+	struggle:demd_trade_node_struggle_world_cs_usfeh = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tebuddah }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_qaryat_wislehm }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_al_wadilah }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_geyiva } 		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_provinceprovince14470 }					
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_hadaril }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_taytuzlikha }		
+	}
+
+	struggle:demd_trade_node_struggle_world_cs_udhaliyya = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_wedhil }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_el_qulatha }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_chalcamahos }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tseelay }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_uzliya }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_disuwai }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tagharad }				
+	}
+
+	struggle:demd_trade_node_struggle_world_ws_ayyar = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_leontyras }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_betaddis }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_shenidad }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_sereksi }
+	}
+
+	struggle:demd_trade_node_struggle_world_ws_amsari = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_shahrake_shahid_madani }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_tchouran }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_baqerabad }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_kalatehye_kabireh }		
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_zargar }
+	}
+
+	struggle:demd_trade_node_struggle_world_ws_kamsaria = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_esmwy }
+	}
+
+	struggle:demd_trade_node_struggle_world_es_desert = {
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_shefarn }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_usurrain }	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ebed33 }
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_ebed59 }				
+	}
+
+	################
+	# Waste 
+	################
+	struggle:demd_trade_node_struggle_world_ga_foglands = {	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_1322 } 		 				
+	}
+	struggle:demd_trade_node_struggle_world_ga_lichdoms = {	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_barencuir } 		 				
+	}
+	struggle:demd_trade_node_struggle_world_ga_mayikprolollan = {	
+		demd_add_trade_node_strategic_location = { COUNTY = title:c_atrium } 		 				
+	}
+}
+
+demd_set_trade_node_linkages = {	
+	################
+	# Sarradon
+	################
+	struggle:demd_trade_node_struggle_world_es_desert = {
+		add_to_global_variable_list = { name = temp target = title:c_shefarn }
+		demd_add_trade_node_linkage = { NODE = world_cs_usfeh }
+
+		add_to_global_variable_list = { name = temp target = title:c_shefarn }
+		demd_add_trade_node_linkage = { NODE = world_ws_ayyar }
+
+		add_to_global_variable_list = { name = temp target = title:c_shefarn }
+		demd_add_trade_node_linkage = { NODE = world_cs_udhaliyya }
+		
+		add_to_global_variable_list = { name = temp target = title:c_usurrain }
+		demd_add_trade_node_linkage = { NODE = world_es_damota }
+
+		add_to_global_variable_list = { name = temp target = title:c_usurrain }
+		add_to_global_variable_list = { name = temp target = title:c_ebed33 }
+		demd_add_trade_node_linkage = { NODE = world_es_hajjan_mountains }
+		
+		add_to_global_variable_list = { name = temp target = title:c_ebed33 }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon }
+		
+		add_to_global_variable_list = { name = temp target = title:c_ebed59 }
+		demd_add_trade_node_linkage = { NODE = world_sow_southeast_sarradon }	
+	}
+
+	struggle:demd_trade_node_struggle_world_ws_kamsaria = {
+		add_to_global_variable_list = { name = temp target = title:c_esmwy }
+		demd_add_trade_node_linkage = { NODE = world_ws_amsari }
+	}  
+
+	struggle:demd_trade_node_struggle_world_ws_amsari = {
+		add_to_global_variable_list = { name = temp target = title:c_kalatehye_kabireh }
+		add_to_global_variable_list = { name = temp target = title:c_zargar }
+		demd_add_trade_node_linkage = { NODE = world_ws_kamsaria }
+		
+		add_to_global_variable_list = { name = temp target = title:c_shahrake_shahid_madani }
+		add_to_global_variable_list = { name = temp target = title:c_tchouran }
+		demd_add_trade_node_linkage = { NODE = world_ws_ayyar }
+
+		add_to_global_variable_list = { name = temp target = title:c_shahrake_shahid_madani }
+		add_to_global_variable_list = { name = temp target = title:c_tchouran }
+		demd_add_trade_node_linkage = { NODE = world_cs_udhaliyya }
+
+		add_to_global_variable_list = { name = temp target = title:c_shahrake_shahid_madani }
+		add_to_global_variable_list = { name = temp target = title:c_baqerabad }
+		demd_add_trade_node_linkage = { NODE = the_western_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_baqerabad }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_marcher_kingdoms }
+	}
+
+	struggle:demd_trade_node_struggle_world_ws_ayyar = {
+		add_to_global_variable_list = { name = temp target = title:c_leontyras }
+		add_to_global_variable_list = { name = temp target = title:c_betaddis }
+		add_to_global_variable_list = { name = temp target = title:c_shenidad }
+		add_to_global_variable_list = { name = temp target = title:c_sereksi }
+		demd_add_trade_node_linkage = { NODE = world_ws_amsari }
+		
+		add_to_global_variable_list = { name = temp target = title:c_leontyras }
+		add_to_global_variable_list = { name = temp target = title:c_sereksi }
+		demd_add_trade_node_linkage = { NODE = world_cs_udhaliyya }
+		
+		add_to_global_variable_list = { name = temp target = title:c_leontyras }
+		demd_add_trade_node_linkage = { NODE = world_es_desert }
+	}
+
+	struggle:demd_trade_node_struggle_world_cs_udhaliyya = {		
+		add_to_global_variable_list = { name = temp target = title:c_tagharad }
+		add_to_global_variable_list = { name = temp target = title:c_uzliya }
+		add_to_global_variable_list = { name = temp target = title:c_disuwai }
+		demd_add_trade_node_linkage = { NODE = the_western_isles }
+		
+		add_to_global_variable_list = { name = temp target = title:c_tseelay }
+		add_to_global_variable_list = { name = temp target = title:c_chalcamahos }
+		add_to_global_variable_list = { name = temp target = title:c_el_qulatha }
+		add_to_global_variable_list = { name = temp target = title:c_tagharad }
+		add_to_global_variable_list = { name = temp target = title:c_wedhil }
+		demd_add_trade_node_linkage = { NODE = world_cs_usfeh }
+		
+		add_to_global_variable_list = { name = temp target = title:c_wedhil }
+		demd_add_trade_node_linkage = { NODE = world_es_desert }
+	}
+
+	struggle:demd_trade_node_struggle_world_cs_usfeh = {
+		add_to_global_variable_list = { name = temp target = title:c_taytuzlikha }
+		demd_add_trade_node_linkage = { NODE = world_cs_udhaliyya }
+		
+		add_to_global_variable_list = { name = temp target = title:c_tebuddah }
+		add_to_global_variable_list = { name = temp target = title:c_qaryat_wislehm }
+		add_to_global_variable_list = { name = temp target = title:c_al_wadilah }
+		add_to_global_variable_list = { name = temp target = title:c_geyiva }
+		demd_add_trade_node_linkage = { NODE = world_es_hajjan_mountains }
+
+		add_to_global_variable_list = { name = temp target = title:c_hadaril }
+		add_to_global_variable_list = { name = temp target = title:c_provinceprovince14470 }
+		add_to_global_variable_list = { name = temp target = title:c_geyiva }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon }
+
+		add_to_global_variable_list = { name = temp target = title:c_hadaril }
+		add_to_global_variable_list = { name = temp target = title:c_provinceprovince14470 }
+		add_to_global_variable_list = { name = temp target = title:c_geyiva }
+		demd_add_trade_node_linkage = { NODE = world_sow_aversarian_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_hadaril }
+		add_to_global_variable_list = { name = temp target = title:c_provinceprovince14470 }
+		add_to_global_variable_list = { name = temp target = title:c_geyiva }
+		demd_add_trade_node_linkage = { NODE = world_sow_etepezea }
+
+		add_to_global_variable_list = { name = temp target = title:c_hadaril }
+		add_to_global_variable_list = { name = temp target = title:c_provinceprovince14470 }
+		demd_add_trade_node_linkage = { NODE = the_western_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_tebuddah }
+		demd_add_trade_node_linkage = { NODE = world_es_desert }
+	}
+
+	struggle:demd_trade_node_struggle_world_es_hajjan_mountains = {		
+		add_to_global_variable_list = { name = temp target = title:c_tel_narn }
+		add_to_global_variable_list = { name = temp target = title:c_ash_shabbri } 	
+		add_to_global_variable_list = { name = temp target = title:c_kudahhar }
+		demd_add_trade_node_linkage = { NODE = world_cs_usfeh }
+		
+		add_to_global_variable_list = { name = temp target = title:c_ash_shabbri } 	
+		add_to_global_variable_list = { name = temp target = title:c_kudahhar }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon }
+
+		add_to_global_variable_list = { name = temp target = title:c_gonan }
+		add_to_global_variable_list = { name = temp target = title:c_ash_shabbri } 	
+		add_to_global_variable_list = { name = temp target = title:c_kudahhar }
+		demd_add_trade_node_linkage = { NODE = world_es_desert }
+
+		add_to_global_variable_list = { name = temp target = title:c_gonan } 	
+		add_to_global_variable_list = { name = temp target = title:c_kudahhar }
+		demd_add_trade_node_linkage = { NODE = world_es_damota }
+	}
+	
+	struggle:demd_trade_node_struggle_world_es_damota = {		
+		add_to_global_variable_list = { name = temp target = title:c_hadewa }
+		add_to_global_variable_list = { name = temp target = title:c_kaletet }
+		add_to_global_variable_list = { name = temp target = title:c_zahali }
+		add_to_global_variable_list = { name = temp target = title:c_gyuzol }
+		add_to_global_variable_list = { name = temp target = title:c_orunlaz }
+		demd_add_trade_node_linkage = { NODE = world_es_hajjan_mountains }
+		
+		add_to_global_variable_list = { name = temp target = title:c_gyuzol }
+		demd_add_trade_node_linkage = { NODE = world_es_adabyss }
+	
+	    add_to_global_variable_list = { name = temp target = title:c_hadewa }
+		demd_add_trade_node_linkage = { NODE = world_es_desert }
+	}
+
+	struggle:demd_trade_node_struggle_world_es_adabyss = {			
+	    add_to_global_variable_list = { name = temp target = title:c_adabyssfort }
+		demd_add_trade_node_linkage = { NODE = world_es_damota }
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_east_sarradon = {
+		add_to_global_variable_list = { name = temp target = title:c_mehmeslu }
+		add_to_global_variable_list = { name = temp target = title:c_khotoorah }
+		demd_add_trade_node_linkage = { NODE = world_es_hajjan_mountains }
+		
+		add_to_global_variable_list = { name = temp target = title:c_thuwacca }
+		add_to_global_variable_list = { name = temp target = title:c_khotoorah }
+		demd_add_trade_node_linkage = { NODE = world_sow_etepezea }
+
+		add_to_global_variable_list = { name = temp target = title:c_thuwacca }
+		add_to_global_variable_list = { name = temp target = title:c_khotoorah }
+		demd_add_trade_node_linkage = { NODE = world_sow_opakhasia }
+
+		add_to_global_variable_list = { name = temp target = title:c_thuwacca }
+		add_to_global_variable_list = { name = temp target = title:c_khotoorah }
+		demd_add_trade_node_linkage = { NODE = world_es_desert }
+
+		add_to_global_variable_list = { name = temp target = title:c_thuwacca }
+		demd_add_trade_node_linkage = { NODE = world_sow_southeast_sarradon }
+
+		add_to_global_variable_list = { name = temp target = title:c_thuwacca }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_southeast_sarradon = {
+		add_to_global_variable_list = { name = temp target = title:c_tamadra }
+		add_to_global_variable_list = { name = temp target = title:c_baashaqiq }
+		add_to_global_variable_list = { name = temp target = title:c_bingost }
+		add_to_global_variable_list = { name = temp target = title:c_sorba }
+		add_to_global_variable_list = { name = temp target = title:c_gatasuq }
+		add_to_global_variable_list = { name = temp target = title:c_shaqerbi }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon }
+
+		add_to_global_variable_list = { name = temp target = title:c_baashaqiq }
+		add_to_global_variable_list = { name = temp target = title:c_tamadra }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+
+		add_to_global_variable_list = { name = temp target = title:c_baashaqiq }
+		demd_add_trade_node_linkage = { NODE = world_es_desert }
+
+		add_to_global_variable_list = { name = temp target = title:c_tamadra }
+		demd_add_trade_node_linkage = { NODE = world_sow_pirate_coast }
+	}
+
+	################
+	# Kashirya
+	################
+	struggle:demd_trade_node_struggle_world_sow_pirate_coast = {
+		add_to_global_variable_list = { name = temp target = title:c_hayolatt }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+		
+		add_to_global_variable_list = { name = temp target = title:c_hayolatt }
+		add_to_global_variable_list = { name = temp target = title:c_kolonawaulla }
+		add_to_global_variable_list = { name = temp target = title:c_hikkaborales }
+		demd_add_trade_node_linkage = { NODE = world_sow_s_kashirya }
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_s_kashirya = {
+		add_to_global_variable_list = { name = temp target = title:c_moratuvi }
+		add_to_global_variable_list = { name = temp target = title:c_natawalaga }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+
+		add_to_global_variable_list = { name = temp target = title:c_badulogoda }
+		add_to_global_variable_list = { name = temp target = title:c_puttapuran }
+		demd_add_trade_node_linkage = { NODE = world_sow_pirate_coast }
+		
+		add_to_global_variable_list = { name = temp target = title:c_south_kashirya_7 }
+		add_to_global_variable_list = { name = temp target = title:c_moratuvi }
+		add_to_global_variable_list = { name = temp target = title:c_natawalaga }
+		add_to_global_variable_list = { name = temp target = title:c_dadkhar }
+		demd_add_trade_node_linkage = { NODE = world_sow_n_kashirya }
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_n_kashirya = {		
+		add_to_global_variable_list = { name = temp target = title:c_mandaparagh }
+		add_to_global_variable_list = { name = temp target = title:c_cuvagarha }
+		demd_add_trade_node_linkage = { NODE = world_sow_s_kashirya }
+
+		add_to_global_variable_list = { name = temp target = title:c_mandaparagh }
+		add_to_global_variable_list = { name = temp target = title:c_cuvagarha }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+
+		add_to_global_variable_list = { name = temp target = title:c_cumiak }
+		add_to_global_variable_list = { name = temp target = title:c_cuvagarha }
+		add_to_global_variable_list = { name = temp target = title:c_valapuiwan }
+		add_to_global_variable_list = { name = temp target = title:c_maerod}
+		demd_add_trade_node_linkage = { NODE = world_sow_eastern_aironoi }		
+	}
+
+	################
+	# Aironoi
+	################
+	struggle:demd_trade_node_struggle_world_sow_eastern_aironoi = {
+		add_to_global_variable_list = { name = temp target = title:c_zugdhi }
+		add_to_global_variable_list = { name = temp target = title:c_murkher }
+		add_to_global_variable_list = { name = temp target = title:c_sainhad }
+		add_to_global_variable_list = { name = temp target = title:c_orkattar }
+		add_to_global_variable_list = { name = temp target = title:c_murun }
+		demd_add_trade_node_linkage = { NODE = world_sow_n_kashirya }
+
+		add_to_global_variable_list = { name = temp target = title:c_orkattar }
+		add_to_global_variable_list = { name = temp target = title:c_murun }
+		demd_add_trade_node_linkage = { NODE = world_sow_western_aironoi }
+
+		add_to_global_variable_list = { name = temp target = title:c_orkattar }
+		add_to_global_variable_list = { name = temp target = title:c_murun }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+
+		add_to_global_variable_list = { name = temp target = title:c_zugdhi }
+		add_to_global_variable_list = { name = temp target = title:c_ullabahd }
+		demd_add_trade_node_linkage = { NODE = world_sow_amaghea }
+
+		add_to_global_variable_list = { name = temp target = title:c_murkher }
+		add_to_global_variable_list = { name = temp target = title:c_ullabahd }
+		add_to_global_variable_list = { name = temp target = title:c_murun }
+		demd_add_trade_node_linkage = { NODE = world_sow_great_steppe }		
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_great_steppe = {
+		add_to_global_variable_list = { name = temp target = title:c_holovi }
+		demd_add_trade_node_linkage = { NODE = world_sow_redlands }	
+
+		add_to_global_variable_list = { name = temp target = title:c_stahawar }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+		
+		add_to_global_variable_list = { name = temp target = title:c_holovi }
+		add_to_global_variable_list = { name = temp target = title:c_erderdi }
+		demd_add_trade_node_linkage = { NODE = world_sow_eastern_aironoi }
+
+		add_to_global_variable_list = { name = temp target = title:c_koperkanger }
+		add_to_global_variable_list = { name = temp target = title:c_erderdi }
+		demd_add_trade_node_linkage = { NODE = world_sow_amaghea }
+
+		add_to_global_variable_list = { name = temp target = title:c_stahawar }
+		add_to_global_variable_list = { name = temp target = title:c_erderdi }
+		add_to_global_variable_list = { name = temp target = title:c_koperkanger }
+		add_to_global_variable_list = { name = temp target = title:c_siradion }
+		demd_add_trade_node_linkage = { NODE = world_sow_western_aironoi }			
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_redlands = {
+		add_to_global_variable_list = { name = temp target = title:c_eguur }
+		demd_add_trade_node_linkage = { NODE = world_sow_great_steppe }
+	}	
+
+	struggle:demd_trade_node_struggle_world_sow_krehejad = {
+		add_to_global_variable_list = { name = temp target = title:c_zartta }
+		add_to_global_variable_list = { name = temp target = title:c_zikti}
+		add_to_global_variable_list = { name = temp target = title:c_krezz }
+		add_to_global_variable_list = { name = temp target = title:c_zehthaaa }
+		add_to_global_variable_list = { name = temp target = title:c_stellios }
+		demd_add_trade_node_linkage = { NODE = world_sow_western_aironoi }	
+		
+		add_to_global_variable_list = { name = temp target = title:c_heparthox }
+		add_to_global_variable_list = { name = temp target = title:c_stellios }
+		add_to_global_variable_list = { name = temp target = title:c_zehthaaa }
+		demd_add_trade_node_linkage = { NODE = world_sow_eastern_aironoi }
+
+		add_to_global_variable_list = { name = temp target = title:c_heparthox }
+		demd_add_trade_node_linkage = { NODE = world_sow_n_kashirya }
+
+		add_to_global_variable_list = { name = temp target = title:c_stellios }
+		demd_add_trade_node_linkage = { NODE = world_sow_s_kashirya }
+
+		add_to_global_variable_list = { name = temp target = title:c_stellios }
+		demd_add_trade_node_linkage = { NODE = world_sow_pirate_coast }
+
+		add_to_global_variable_list = { name = temp target = title:c_stellios }
+		demd_add_trade_node_linkage = { NODE = world_sow_southeast_sarradon }
+
+		add_to_global_variable_list = { name = temp target = title:c_stellios }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon }
+
+		add_to_global_variable_list = { name = temp target = title:c_zartta }
+		demd_add_trade_node_linkage = { NODE = world_sow_great_steppe }
+		
+		add_to_global_variable_list = { name = temp target = title:c_zartta }
+		add_to_global_variable_list = { name = temp target = title:c_krezz }
+		demd_add_trade_node_linkage = { NODE = world_sow_opakhasia }		
+	}
+
+	struggle:demd_trade_node_struggle_world_sow_amaghea = {	
+		add_to_global_variable_list = { name = temp target = title:c_oni }
+		add_to_global_variable_list = { name = temp target = title:c_tsnarketa }
+		add_to_global_variable_list = { name = temp target = title:c_ninostaqaro }
+		demd_add_trade_node_linkage = { NODE = world_sow_great_steppe }
+
+		add_to_global_variable_list = { name = temp target = title:c_oni }
+		add_to_global_variable_list = { name = temp target = title:c_tsnarketa }
+		add_to_global_variable_list = { name = temp target = title:c_ninostaqaro }
+		demd_add_trade_node_linkage = { NODE = world_sow_western_aironoi }
+		
+		add_to_global_variable_list = { name = temp target = title:c_tsnarketa }
+		add_to_global_variable_list = { name = temp target = title:c_oni }
+		demd_add_trade_node_linkage = { NODE = world_sow_eastern_aironoi }		
+	}	
+
+	struggle:demd_trade_node_struggle_world_sow_western_aironoi = {
+		add_to_global_variable_list = { name = temp target = title:c_kannypes }
+		add_to_global_variable_list = { name = temp target = title:c_pergike }
+		demd_add_trade_node_linkage = { NODE = world_sow_amaghea }
+
+		add_to_global_variable_list = { name = temp target = title:c_rizia }
+		add_to_global_variable_list = { name = temp target = title:c_taragard }
+		demd_add_trade_node_linkage = { NODE = world_sow_great_steppe }
+
+		add_to_global_variable_list = { name = temp target = title:c_biliae }
+		add_to_global_variable_list = { name = temp target = title:c_taragard }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+
+		add_to_global_variable_list = { name = temp target = title:c_pergike }
+		add_to_global_variable_list = { name = temp target = title:c_mallilene }
+		add_to_global_variable_list = { name = temp target = title:c_bhrytenion }
+		add_to_global_variable_list = { name = temp target = title:c_karyae }
+		add_to_global_variable_list = { name = temp target = title:c_biliae }
+		demd_add_trade_node_linkage = { NODE = world_sow_opakhasia }			
+	}
+	
+	################
+	# Opakhasia
+	################
+	struggle:demd_trade_node_struggle_world_sow_opakhasia = {
+		add_to_global_variable_list = { name = temp target = title:c_lekerio }
+		add_to_global_variable_list = { name = temp target = title:c_salikon }
+		add_to_global_variable_list = { name = temp target = title:c_elatox }
+		add_to_global_variable_list = { name = temp target = title:c_posinda }
+		add_to_global_variable_list = { name = temp target = title:c_olynthope }
+		add_to_global_variable_list = { name = temp target = title:c_rhypacuse }
+		demd_add_trade_node_linkage = { NODE = world_sow_western_aironoi }
+
+		add_to_global_variable_list = { name = temp target = title:c_elatox }
+		add_to_global_variable_list = { name = temp target = title:c_olynthope }
+		demd_add_trade_node_linkage = { NODE = world_sow_krehejad }
+
+		add_to_global_variable_list = { name = temp target = title:c_iolcicus }
+		add_to_global_variable_list = { name = temp target = title:c_olynthope }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon }
+
+		add_to_global_variable_list = { name = temp target = title:c_tinitida }
+		add_to_global_variable_list = { name = temp target = title:c_hemikon }
+		demd_add_trade_node_linkage = { NODE = world_cs_usfeh }
+
+		add_to_global_variable_list = { name = temp target = title:c_tinitida }
+		add_to_global_variable_list = { name = temp target = title:c_hemikon }
+		add_to_global_variable_list = { name = temp target = title:c_iolcicus }
+		add_to_global_variable_list = { name = temp target = title:c_epidetra }
+		demd_add_trade_node_linkage = { NODE = world_sow_etepezea }
+
+		add_to_global_variable_list = { name = temp target = title:c_tinitida }
+		add_to_global_variable_list = { name = temp target = title:c_epidetra }
+		demd_add_trade_node_linkage = { NODE = world_sow_malcois }
+
+		add_to_global_variable_list = { name = temp target = title:c_hemikon }
+		demd_add_trade_node_linkage = { NODE = world_sow_aversarian_isles }			
+	}
+	
+	################
+	# Malcois
+	################
+	struggle:demd_trade_node_struggle_world_sow_malcois = {
+		add_to_global_variable_list = { name = temp target = title:c_phararnae }
+		add_to_global_variable_list = { name = temp target = title:c_ithi }
+		add_to_global_variable_list = { name = temp target = title:c_messis }
+		add_to_global_variable_list = { name = temp target = title:c_rhoea }
+		add_to_global_variable_list = { name = temp target = title:c_dubes }
+		demd_add_trade_node_linkage = { NODE = world_sow_etepezea }
+		
+		add_to_global_variable_list = { name = temp target = title:c_phararnae }
+		add_to_global_variable_list = { name = temp target = title:c_ithi }
+		demd_add_trade_node_linkage = { NODE = world_sow_opakhasia }
+		
+		add_to_global_variable_list = { name = temp target = title:c_messis }
+		add_to_global_variable_list = { name = temp target = title:c_dubes}
+		demd_add_trade_node_linkage = { NODE = world_ga_western_clanlands }
+	}
+	
+	################
+	# Etepezea
+	################
+	struggle:demd_trade_node_struggle_world_sow_etepezea = {		
+		add_to_global_variable_list = { name = temp target = title:c_rhodara }
+		add_to_global_variable_list = { name = temp target = title:c_vuonae }
+		add_to_global_variable_list = { name = temp target = title:c_kannystus }
+		demd_add_trade_node_linkage = { NODE = world_sow_opakhasia }
+
+		add_to_global_variable_list = { name = temp target = title:c_rhodara }
+		add_to_global_variable_list = { name = temp target = title:c_daykanoss }
+		add_to_global_variable_list = { name = temp target = title:c_zakanixapoli }
+		demd_add_trade_node_linkage = { NODE = world_sow_malcois }
+
+		add_to_global_variable_list = { name = temp target = title:c_daykanoss}
+		add_to_global_variable_list = { name = temp target = title:c_zakanixapoli }
+		add_to_global_variable_list = { name = temp target = title:c_tominope }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_clanlands }
+
+		add_to_global_variable_list = { name = temp target = title:c_tominope }
+		add_to_global_variable_list = { name = temp target = title:c_halium }
+		add_to_global_variable_list = { name = temp target = title:c_zacharae }
+		add_to_global_variable_list = { name = temp target = title:c_vuonae }
+		add_to_global_variable_list = { name = temp target = title:c_kannystus }
+		demd_add_trade_node_linkage = { NODE = world_sow_aversarian_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_kannystus }
+		add_to_global_variable_list = { name = temp target = title:c_vuonae }
+		add_to_global_variable_list = { name = temp target = title:c_zacharae }
+		demd_add_trade_node_linkage = { NODE = world_cs_usfeh }
+
+		add_to_global_variable_list = { name = temp target = title:c_vuonae }
+		add_to_global_variable_list = { name = temp target = title:c_kannystus }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon }
+	}
+	
+	################
+	# Tower isles something
+	################
+	struggle:demd_trade_node_struggle_world_sow_aversarian_isles = {
+		add_to_global_variable_list = { name = temp target = title:c_pellicrus }
+		add_to_global_variable_list = { name = temp target = title:c_kyzous }
+		add_to_global_variable_list = { name = temp target = title:c_thebastro }
+		add_to_global_variable_list = { name = temp target = title:c_zainice }
+		add_to_global_variable_list = { name = temp target = title:c_palai_zkhni }
+		add_to_global_variable_list = { name = temp target = title:c_dragonteeth }
+		demd_add_trade_node_linkage = { NODE = world_sow_etepezea }
+		
+		add_to_global_variable_list = { name = temp target = title:c_pellicrus }
+		add_to_global_variable_list = { name = temp target = title:c_kyzous }
+		add_to_global_variable_list = { name = temp target = title:c_thebastro }
+		demd_add_trade_node_linkage = { NODE = world_cs_usfeh }
+
+		add_to_global_variable_list = { name = temp target = title:c_pellicrus }
+		demd_add_trade_node_linkage = { NODE = world_sow_east_sarradon } 
+		
+		add_to_global_variable_list = { name = temp target = title:c_kyzous }
+		add_to_global_variable_list = { name = temp target = title:c_thebastro }
+		add_to_global_variable_list = { name = temp target = title:c_palai_zkhni }
+		add_to_global_variable_list = { name = temp target = title:c_dragonteeth }
+		demd_add_trade_node_linkage = { NODE = the_western_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_kyzous }
+		add_to_global_variable_list = { name = temp target = title:c_zainice }
+		add_to_global_variable_list = { name = temp target = title:c_palai_zkhni }
+		add_to_global_variable_list = { name = temp target = title:c_dragonteeth }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_clanlands }
+	}
+	
+	################
+	# Clanlands
+	################
+	struggle:demd_trade_node_struggle_world_ga_western_clanlands = {
+		add_to_global_variable_list = { name = temp target = title:c_poios }
+		add_to_global_variable_list = { name = temp target = title:c_ostrozno_brdo }
+		add_to_global_variable_list = { name = temp target = title:c_kankaanviisa }
+		add_to_global_variable_list = { name = temp target = title:c_dahlitz }
+		add_to_global_variable_list = { name = temp target = title:c_oberdessing }
+		demd_add_trade_node_linkage = { NODE = world_sow_etepezea }
+		
+		add_to_global_variable_list = { name = temp target = title:c_poios }
+		add_to_global_variable_list = { name = temp target = title:c_ostrozno_brdo }
+		demd_add_trade_node_linkage = { NODE = world_sow_malcois }
+
+		add_to_global_variable_list = { name = temp target = title:c_radovesice }
+		add_to_global_variable_list = { name = temp target = title:c_bigelbach }
+		add_to_global_variable_list = { name = temp target = title:c_dahlitz }
+		add_to_global_variable_list = { name = temp target = title:c_oberdessing }
+		demd_add_trade_node_linkage = { NODE = world_ga_eastern_clanlands }
+
+		add_to_global_variable_list = { name = temp target = title:c_radovesice }
+		add_to_global_variable_list = { name = temp target = title:c_bigelbach }
+		add_to_global_variable_list = { name = temp target = title:c_halberbracht }
+		add_to_global_variable_list = { name = temp target = title:c_ottetstift }
+		demd_add_trade_node_linkage = { NODE = world_ga_eastern_marcher_kingdoms }
+
+		add_to_global_variable_list = { name = temp target = title:c_ottetstift }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_marcher_kingdoms }
+
+		add_to_global_variable_list = { name = temp target = title:c_ottetstift }
+		demd_add_trade_node_linkage = { NODE = the_western_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_ottetstift }
+		add_to_global_variable_list = { name = temp target = title:c_kankaanviisa }
+		demd_add_trade_node_linkage = { NODE = world_sow_aversarian_isles }
+	}
+	
+	struggle:demd_trade_node_struggle_world_ga_eastern_clanlands = {
+		add_to_global_variable_list = { name = temp target = title:c_unterfahrenbach }
+		add_to_global_variable_list = { name = temp target = title:c_wollomoos }
+		add_to_global_variable_list = { name = temp target = title:c_cadeni }
+		add_to_global_variable_list = { name = temp target = title:c_sedlovice }
+		add_to_global_variable_list = { name = temp target = title:c_dammhausen }
+		add_to_global_variable_list = { name = temp target = title:c_bukovsko }
+		add_to_global_variable_list = { name = temp target = title:c_krtely }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_clanlands }
+
+		add_to_global_variable_list = { name = temp target = title:c_wollomoos }
+		add_to_global_variable_list = { name = temp target = title:c_cadeni }
+		add_to_global_variable_list = { name = temp target = title:c_sedlovice }
+		add_to_global_variable_list = { name = temp target = title:c_dethiclos }
+		demd_add_trade_node_linkage = { NODE = world_ga_eastern_marcher_kingdoms }
+	}	
+
+	################
+	# Marcher
+	################
+	struggle:demd_trade_node_struggle_world_ga_eastern_marcher_kingdoms = {
+		add_to_global_variable_list = { name = temp target = title:c_astassus }
+		add_to_global_variable_list = { name = temp target = title:c_yaffenguiem }
+		add_to_global_variable_list = { name = temp target = title:c_gradiene }
+		add_to_global_variable_list = { name = temp target = title:c_plaffinmont }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_marcher_kingdoms } 
+
+		add_to_global_variable_list = { name = temp target = title:c_yiuve }
+		add_to_global_variable_list = { name = temp target = title:c_troscease }
+		add_to_global_variable_list = { name = temp target = title:c_gradiene }
+		demd_add_trade_node_linkage = { NODE = world_ga_eastern_clanlands }
+
+		add_to_global_variable_list = { name = temp target = title:c_astassus }
+		add_to_global_variable_list = { name = temp target = title:c_yaffenguiem }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_clanlands }
+
+		add_to_global_variable_list = { name = temp target = title:c_astassus }
+		demd_add_trade_node_linkage = { NODE = the_western_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_astassus }
+		demd_add_trade_node_linkage = { NODE = world_sow_aversarian_isles }
+	}
+
+	struggle:demd_trade_node_struggle_world_ga_western_marcher_kingdoms = {
+
+		add_to_global_variable_list = { name = temp target = title:c_aastauxporte }
+		add_to_global_variable_list = { name = temp target = title:c_dontville }
+		add_to_global_variable_list = { name = temp target = title:c_guizforte }
+		add_to_global_variable_list = { name = temp target = title:c_nambre }
+		add_to_global_variable_list = { name = temp target = title:c_noganad }
+		demd_add_trade_node_linkage = { NODE = world_ga_eastern_marcher_kingdoms }
+		
+		add_to_global_variable_list = { name = temp target = title:c_noganad }
+		add_to_global_variable_list = { name = temp target = title:c_nambre }
+		add_to_global_variable_list = { name = temp target = title:c_aastauxporte }
+		add_to_global_variable_list = { name = temp target = title:c_grande_gisredde }
+		add_to_global_variable_list = { name = temp target = title:c_peti_gisredde }
+		demd_add_trade_node_linkage = { NODE = the_western_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_noganad }
+		add_to_global_variable_list = { name = temp target = title:c_nambre }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_clanlands }
+
+		add_to_global_variable_list = { name = temp target = title:c_grande_gisredde }
+		add_to_global_variable_list = { name = temp target = title:c_peti_gisredde }
+		demd_add_trade_node_linkage = { NODE = world_sow_aversarian_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_grande_gisredde }
+		add_to_global_variable_list = { name = temp target = title:c_peti_gisredde }
+		demd_add_trade_node_linkage = { NODE = world_ws_amsari }
+	}
+	
+	################
+	# Western Isles
+	################
+	struggle:demd_trade_node_struggle_the_western_isles = {
+		add_to_global_variable_list = { name = temp target = title:c_chevalie_islands_6 }
+		add_to_global_variable_list = { name = temp target = title:c_raphaidothex }
+		add_to_global_variable_list = { name = temp target = title:c_smli }
+		add_to_global_variable_list = { name = temp target = title:c_ioulianoseras }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_marcher_kingdoms }
+
+		add_to_global_variable_list = { name = temp target = title:c_chevalie_islands_6 }
+		add_to_global_variable_list = { name = temp target = title:c_raphaidothex }
+		add_to_global_variable_list = { name = temp target = title:c_smli }
+		add_to_global_variable_list = { name = temp target = title:c_ioulianoseras }
+		add_to_global_variable_list = { name = temp target = title:c_biggestisle }
+		demd_add_trade_node_linkage = { NODE = world_sow_aversarian_isles }
+
+		add_to_global_variable_list = { name = temp target = title:c_chevalie_islands_6 }
+		add_to_global_variable_list = { name = temp target = title:c_raphaidothex }
+		add_to_global_variable_list = { name = temp target = title:c_ioulianoseras }
+		demd_add_trade_node_linkage = { NODE = world_ga_western_clanlands }
+
+		add_to_global_variable_list = { name = temp target = title:c_biggestisle }
+		add_to_global_variable_list = { name = temp target = title:c_smli }
+		add_to_global_variable_list = { name = temp target = title:c_ioulianoseras }
+		demd_add_trade_node_linkage = { NODE = world_cs_usfeh }
+
+		add_to_global_variable_list = { name = temp target = title:c_smli }
+		add_to_global_variable_list = { name = temp target = title:c_biggestisle }
+		demd_add_trade_node_linkage = { NODE = world_ws_amsari }
+
+		add_to_global_variable_list = { name = temp target = title:c_smli }
+		add_to_global_variable_list = { name = temp target = title:c_biggestisle }
+		demd_add_trade_node_linkage = { NODE = world_cs_udhaliyya }
+	}
+}
+
+##############################################################
+
+# For tightly linked culture + faiths where we don't want to spawn a culture member with the court owner's faith
+demd_set_ancestral_faiths = {
+	
+}
+
+##############################################################
+
+
+demd_add_special_buildings = {
+}
+
+##############################################################
+
+demd_assign_special_resources = {
+
+	# currently unused
+	
+}
+
+#############################################################################
+
+demd_manual_pop_placements = {
+	demd_fill_with_holdings = { TITLE =  PERCENT = 100 }	
+	## Obviously need different versions for 867...
+	# temporarily deleted	
+}
+
+demd_fill_with_holdings = {
+	title:$TITLE$ = {
+		every_in_de_jure_hierarchy = {
+			limit = { 
+				tier = tier_county 
+				NOT = { title_province = { has_holding_type = tribal_holding } }
+				NOT = { faith = { has_doctrine = unreformed_faith_doctrine } }
+			}
+			every_county_province = {
+				limit = { has_holding = no }
+				random_list = {
+					0 = {
+						modifier = {
+							always = yes
+							add = $PERCENT$
+						}
+						demd_build_minor_holding = yes
+					}
+					100 = {
+						modifier = {
+							always = yes
+							add = -$PERCENT$
+						}
+						# do nothing
+					}
+				}
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,105 @@
+﻿magi_tower_01 = {
+	can_construct_potential = {
+		county = {
+			NOT = {
+				any_county_province = {
+					has_building_or_higher = magi_tower_01 
+				}
+			}
+		}
+		has_any_positive_magic_doctrine = yes
+	}
+
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+    construction_time = quick_construction_time
+    
+    cost_gold = main_building_tier_1_cost
+	next_building = magi_tower_02
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_1
+	}
+    
+    character_modifier = {
+		men_at_arms_maintenance = -0.02
+		magi_damage_mult = 0.04
+		magi_toughness_mult = 0.03
+	}
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_01
+	flag = demd_public_order_building
+	flag = demd_public_order_building_01
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_01 }
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
+		reset_regular_building_vars = yes
+	}
+    type_icon = "icon_building_hill_forts.dds"
+}
+
+magi_tower_02 = {
+    construction_time = quick_construction_time
+    
+    cost_gold = main_building_tier_2_cost
+	
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_2
+	}
+    
+    character_modifier = {
+		men_at_arms_maintenance = -0.04
+		magi_damage_mult = 0.08
+		magi_toughness_mult = 0.06
+	}
+	flag = demd_sanitation_building
+	flag = demd_sanitation_building_02
+	flag = demd_public_order_building
+	flag = demd_public_order_building_02
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_02 }
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_02 }
+		reset_regular_building_vars = yes
+	}
+    type_icon = "icon_building_hill_forts.dds"
+}
+
+magi_quarters_01 = {
+	can_construct_potential = {
+		county = {
+			NOT = {
+				any_county_province = {
+					has_building_or_higher = magi_quarters_01 
+				}
+			}
+		}
+		faith = {
+			has_doctrine_parameter = magic_shunned
+		}
+	}
+
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+    construction_time = quick_construction_time
+    
+    cost_gold = main_building_tier_1_cost
+    
+    character_modifier = {
+		men_at_arms_maintenance = -0.01
+		magi_damage_mult = 0.02
+		magi_toughness_mult = 0.02
+	}
+   	flag = demd_sanitation_building
+	flag = demd_sanitation_building_03
+	flag = demd_public_order_building
+	flag = demd_public_order_building_03
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_03 }
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_03 }
+		reset_regular_building_vars = yes
+	} 
+    type_icon = "icon_building_palisades.dds"
+}

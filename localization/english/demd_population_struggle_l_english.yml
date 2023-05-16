@@ -1,0 +1,29 @@
+﻿l_english:
+
+#############################################
+# Sinews of War Patcher
+# by Vertimnus
+# This file was compiled by a machine.
+# It should never be manually edited.
+#############################################
+
+demd_trade_node_struggle_world_ga_western_marcher_kingdoms:0 "Trade Node: $world_ga_western_marcher_kingdoms$"
+demd_trade_node_struggle_world_ga_eastern_marcher_kingdoms:0 "Trade Node: $world_ga_eastern_marcher_kingdoms$"
+demd_trade_node_struggle_world_ga_eastern_clanlands:0 "Trade Node: $world_ga_eastern_clanlands$"
+demd_trade_node_struggle_world_ga_western_clanlands:0 "Trade Node: $world_ga_western_clanlands$"
+demd_trade_node_struggle_world_ga_mayikprolollan:0 "Trade Node: $world_ga_mayikprolollan$"
+demd_trade_node_struggle_world_ga_western_aversaria:0 "Trade Node: $world_ga_western_aversaria$"
+demd_trade_node_struggle_world_ga_northern_aversaria:0 "Trade Node: $world_ga_northern_aversaria$"
+demd_trade_node_struggle_world_ga_central_aversaria:0 "Trade Node: $world_ga_central_aversaria$"
+demd_trade_node_struggle_world_ga_aironoi:0 "Trade Node: $world_ga_aironoi$"
+demd_trade_node_struggle_world_ga_foglands:0 "Trade Node: $world_ga_foglands$"
+demd_trade_node_struggle_world_ga_kashirya:0 "Trade Node: $world_ga_kashirya$"
+demd_trade_node_struggle_world_es_desert:0 "Trade Node: $world_es_desert$"
+demd_trade_node_struggle_world_es_eastern_coast:0 "Trade Node: $world_es_eastern_coast$"
+demd_trade_node_struggle_world_es_hajjan_mountains:0 "Trade Node: $world_es_hajjan_mountains$"
+demd_trade_node_struggle_world_es_damota:0 "Trade Node: $world_es_damota$"
+demd_trade_node_struggle_world_cs_usfeh:0 "Trade Node: $world_cs_usfeh$"
+demd_trade_node_struggle_world_cs_udhaliyya:0 "Trade Node: $world_cs_udhaliyya$"
+demd_trade_node_struggle_world_ws_amsari:0 "Trade Node: $world_ws_amsari$"
+demd_trade_node_struggle_world_ws_kamsaria:0 "Trade Node: $world_ws_kamsaria$"
+demd_trade_node_struggle_world_ws_ayyar:0 "Trade Node: $world_ws_ayyar$"

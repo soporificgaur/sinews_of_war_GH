@@ -1,0 +1,1490 @@
+﻿@holding_illustration_western = "gfx/interface/illustrations/holding_types/city_western.dds"
+@holding_illustration_india = "gfx/interface/illustrations/holding_types/city_india.dds"
+@holding_illustration_mediterranean = "gfx/interface/illustrations/holding_types/city_mediterranean.dds"
+@holding_illustration_mena = "gfx/interface/illustrations/holding_types/city_mena.dds"
+
+###################
+# PALACE DISTRICT #
+###################
+
+palace_01 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_western_city_02_mesh"
+		}
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/western_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { konijkmener_biozone chevalie_biozone lichdoms_biozone migraddar_biozone vyshtanka_biozone knokidbes_biozone southern_kalath_biozone kalath_redwoods_biozone sulzegg_basin_biozone pathos_delta_biozone kalath_old_growth_biozone  
+black_mountains_biozone foglands_biozone whisperveil_biozone mayikprolollan_biozone }
+		graphical_cultures = { western_building_gfx slavic_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mena_city_02_mesh"
+		}
+		illustration = @holding_illustration_mena
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mena_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone  khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone aekershaan_biozone }
+		graphical_cultures = { mena_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_india_city_02_mesh"
+		}
+		illustration = @holding_illustration_india
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/indian_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone damota_biozone  }
+		graphical_cultures = { african_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mediterranean_city_02_mesh"
+		}
+		illustration = @holding_illustration_mediterranean
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mediterranean_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		graphical_cultures = { mediterranean_building_gfx }
+	}
+	
+	can_construct_potential = {
+		county_has_any_metropolis_or_ruined_district_trigger = yes
+	}
+	
+	can_construct = {
+		culture = {
+			has_innovation = innovation_city_planning
+		}
+	}
+	
+	can_construct_showing_failures_only = {
+		building_requirement_tribal_holding_in_county = no
+	}
+	
+	cost_gold = main_building_tier_1_cost
+	next_building = palace_02
+	
+	levy = poor_building_levy_tier_2
+	max_garrison = normal_building_max_garrison_tier_2
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.10
+		stress_gain_mult = -0.10
+		#Add a court grandeur bonus
+		court_grandeur_baseline_add = 5
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_2
+	}
+	
+	province_culture_modifier = {
+		parameter = city_buildings_more_powerful
+		levy_size = 0.25
+		tax_mult = 0.01
+	}
+	
+	county_culture_modifier = {
+		parameter = city_buildings_more_county_opinion
+		county_opinion_add = 5
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_more_powerful		
+		development_growth_factor = 0.05
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_less_control
+		monthly_county_control_change_factor = -0.25
+	}
+	
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 2
+	}
+
+	on_complete = {
+		apply_province_garrison = yes
+		apply_province_levy = yes		
+	}
+	county_dynasty_modifier = {
+		county_holder_dynasty_perk = fp2_urbanism_legacy_1 # check if the dynasty of the county holder has a specific perk
+	    development_growth_factor = fp2_urbanism_legacy_1_metro_bonus_value
+	}
+	flag = city
+	next_building = palace_02
+	
+	type_icon = "icon_building_palace.dds"
+	
+	ai_value = {
+		base = 0
+		modifier = {
+			add = 100
+			scope:holder = {
+				domain_limit_available < 1
+			}
+		}
+		modifier = {
+			add = 50
+			county = {
+				NOT = {
+					any_county_province = {
+						has_building_or_higher = palace_01
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			scope:holder.culture = { has_cultural_parameter = ai_more_likely_to_city }
+		}
+		modifier = {
+			factor = 2
+			scope:holder.culture = {
+				OR = {
+					has_cultural_pillar = ethos_courtly
+					has_cultural_pillar = ethos_bureaucratic
+				}
+			}
+		}
+	}
+}
+
+palace_02 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_western_city_02_mesh"
+		}
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/western_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { konijkmener_biozone chevalie_biozone lichdoms_biozone migraddar_biozone vyshtanka_biozone knokidbes_biozone southern_kalath_biozone kalath_redwoods_biozone sulzegg_basin_biozone pathos_delta_biozone kalath_old_growth_biozone  
+black_mountains_biozone foglands_biozone whisperveil_biozone mayikprolollan_biozone }
+		graphical_cultures = { western_building_gfx slavic_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mena_city_02_mesh"
+		}
+		illustration = @holding_illustration_mena
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mena_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone  khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone aekershaan_biozone }
+		graphical_cultures = { mena_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_india_city_02_mesh"
+		}
+		illustration = @holding_illustration_india
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/indian_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone damota_biozone  }
+		graphical_cultures = { african_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mediterranean_city_02_mesh"
+		}
+		illustration = @holding_illustration_mediterranean
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mediterranean_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		graphical_cultures = { mediterranean_building_gfx }
+	}
+	
+	can_construct_potential = {
+	}
+	
+	can_construct_showing_failures_only = {
+	}
+	
+	cost_gold = main_building_tier_2_cost
+	next_building = palace_03
+	
+	levy = normal_building_levy_tier_2
+	max_garrison = normal_building_max_garrison_tier_2
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.20
+		stress_gain_mult = -0.20
+		#Add a court grandeur bonus
+		court_grandeur_baseline_add = 10
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_4
+	}
+	
+	province_culture_modifier = {
+		parameter = city_buildings_more_powerful
+		levy_size = 0.5
+		tax_mult = 0.02
+	}
+	
+	county_culture_modifier = {
+		parameter = city_buildings_more_county_opinion
+		county_opinion_add = 10
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_more_powerful		
+		development_growth_factor = 0.1
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_less_control
+		monthly_county_control_change_factor = -0.25
+	}
+	
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 3
+	}
+
+	on_complete = {
+		apply_province_garrison = yes
+		apply_province_levy = yes		
+	}
+	county_dynasty_modifier = {
+		county_holder_dynasty_perk = fp2_urbanism_legacy_1 # check if the dynasty of the county holder has a specific perk
+	    development_growth_factor = fp2_urbanism_legacy_1_metro_bonus_value
+	}
+		
+	flag = city
+	
+	ai_value = {
+		base = 0
+	}
+}
+
+palace_03 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_western_city_02_mesh"
+		}
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/western_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { konijkmener_biozone chevalie_biozone lichdoms_biozone migraddar_biozone vyshtanka_biozone knokidbes_biozone southern_kalath_biozone kalath_redwoods_biozone sulzegg_basin_biozone pathos_delta_biozone kalath_old_growth_biozone  
+black_mountains_biozone foglands_biozone whisperveil_biozone mayikprolollan_biozone }
+		graphical_cultures = { western_building_gfx slavic_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mena_city_02_mesh"
+		}
+		illustration = @holding_illustration_mena
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mena_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone  khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone aekershaan_biozone }
+		graphical_cultures = { mena_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_india_city_02_mesh"
+		}
+		illustration = @holding_illustration_india
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/indian_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone damota_biozone  }
+		graphical_cultures = { african_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mediterranean_city_02_mesh"
+		}
+		illustration = @holding_illustration_mediterranean
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mediterranean_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		graphical_cultures = { mediterranean_building_gfx }
+	}
+	
+	can_construct_potential = {
+	}
+	
+	can_construct_showing_failures_only = {
+	}
+	
+	cost_gold = main_building_tier_3_cost
+	next_building = palace_04
+	
+	levy = normal_building_levy_tier_2
+	max_garrison = normal_building_max_garrison_tier_2
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.30
+		stress_gain_mult = -0.30
+		#Add a court grandeur bonus
+		court_grandeur_baseline_add = 15
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_6
+	}
+	
+	province_culture_modifier = {
+		parameter = city_buildings_more_powerful
+		levy_size = 0.75
+		tax_mult = 0.03
+	}
+	
+	county_culture_modifier = {
+		parameter = city_buildings_more_county_opinion
+		county_opinion_add = 15
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_more_powerful		
+		development_growth_factor = 0.15
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_less_control
+		monthly_county_control_change_factor = -0.25
+	}
+	
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 4
+	}
+
+	on_complete = {
+		apply_province_garrison = yes
+		apply_province_levy = yes		
+	}
+	county_dynasty_modifier = {
+		county_holder_dynasty_perk = fp2_urbanism_legacy_1 # check if the dynasty of the county holder has a specific perk
+	    development_growth_factor = fp2_urbanism_legacy_1_metro_bonus_value
+	}
+
+	flag = city
+	
+	ai_value = {
+		base = 0
+	}
+}
+
+palace_04 = {
+	construction_time = slow_construction_time
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_western_city_02_mesh"
+		}
+		illustration = @holding_illustration_western
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/western_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { konijkmener_biozone chevalie_biozone lichdoms_biozone migraddar_biozone vyshtanka_biozone knokidbes_biozone southern_kalath_biozone kalath_redwoods_biozone sulzegg_basin_biozone pathos_delta_biozone kalath_old_growth_biozone  
+black_mountains_biozone foglands_biozone whisperveil_biozone mayikprolollan_biozone }
+		graphical_cultures = { western_building_gfx slavic_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mena_city_02_mesh"
+		}
+		illustration = @holding_illustration_mena
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mena_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { sinhamiyah_biozone kharadamat_biozone alghazir_biozone ayyar_coast_biozone amsar_biozone kemsar_biozone sarradonian_mountains_biozone sarradonian_desert_biozone  khenemhat_biozone boneyard_biozone sirwali_biozone rojihlat_biozone cyrat_biozone crater_biozone aekershaan_biozone }
+		graphical_cultures = { mena_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_india_city_02_mesh"
+		}
+		illustration = @holding_illustration_india
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/indian_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { north_kharadan_biozone hyratan_biozone darmirat_plain_biozone kashti_flats_biozone magiyor_biozone kafasali_biozone vichacil_biozone katuppilan_biozone rovarska_biozone nightcoast_biozone damota_biozone  }
+		graphical_cultures = { african_building_gfx }
+	}
+	
+	asset = {
+		type = pdxmesh
+		names = {
+			"building_mediterranean_city_02_mesh"
+		}
+		illustration = @holding_illustration_mediterranean
+		soundeffect = { soundeffect = "event:/SFX/Ambience/3DMapEmitters/Holdings/City/mediterranean_city" soundparameter = { "Tier" = 2 } }
+		graphical_regions = { krehejad_biozone kasiryat_biozone redlands_biozone amaghea_mountains_biozone brass_sea_coasts_biozone aironoian_southeast_biozone fools_coast_biozone great_steppe_biozone hyrea_biozone western_aironoi_biozone red_waste_biozone northern_opakhasia_biozone western_opakhasia_biozone malcois_biozone etepezea_biozone  }
+		graphical_cultures = { mediterranean_building_gfx }
+	}
+	
+	can_construct_potential = {
+	}
+	
+	can_construct_showing_failures_only = {
+	}
+	
+	cost_gold = main_building_tier_4_cost
+	
+	levy = normal_building_levy_tier_2
+	max_garrison = normal_building_max_garrison_tier_2
+	garrison_reinforcement_factor = building_garrison_reinforcement_factor_tier_2
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.40
+		stress_gain_mult = -0.40
+		#Add a court grandeur bonus
+		court_grandeur_baseline_add = 20
+	}
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_8
+	}
+	
+	province_culture_modifier = {
+		parameter = city_buildings_more_powerful
+		levy_size = 1.0
+		tax_mult = 0.04
+	}
+	
+	county_culture_modifier = {
+		parameter = city_buildings_more_county_opinion
+		county_opinion_add = 20
+	}
+
+	province_terrain_modifier = {
+		parameter = maritime_mercantilism_coastal_holdings
+		is_coastal = yes
+		tax_mult = maritime_mercantilism_coastal_holdings_value
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_more_powerful		
+		development_growth_factor = 0.2
+	}
+
+	county_culture_modifier = {
+		parameter = city_buildings_less_control
+		monthly_county_control_change_factor = -0.25
+	}
+	
+	province_terrain_modifier = {
+		parameter = coastal_holding_bonuses
+		is_coastal = yes
+		build_speed = -0.1
+	}
+
+	province_terrain_modifier = {
+		parameter = coastal_holdings_give_defensive_bonus
+		is_coastal = yes
+		defender_holding_advantage = 5
+	}
+
+	on_complete = {
+		apply_province_garrison = yes
+		apply_province_levy = yes		
+	}
+	
+	county_dynasty_modifier = {
+		county_holder_dynasty_perk = fp2_urbanism_legacy_1 # check if the dynasty of the county holder has a specific perk
+	    development_growth_factor = fp2_urbanism_legacy_1_metro_bonus_value
+	}
+	
+	flag = city
+	
+	ai_value = {
+		base = 0
+	}
+}
+
+luxury_goods_01 = {
+	construction_time = slow_construction_time
+	
+	can_construct_potential = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+		has_building_or_higher = palace_01
+	}
+	
+	cost_gold = main_building_tier_1_cost
+	character_modifier = {
+		monthly_prestige = 0.25
+		diplomatic_range_mult = 0.05
+	}
+	province_modifier = {
+		monthly_income = good_building_tax_tier_1
+	}
+	next_building = luxury_goods_02
+	
+	flag = demd_goods_building
+	flag = demd_goods_building_01
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_01 }
+		reset_regular_building_vars = yes
+	}
+
+
+	type_icon = "icon_building_luxuries_market.dds"
+}
+
+luxury_goods_02 = {
+	construction_time = slow_construction_time
+	can_construct_potential = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+	}
+	
+	can_construct = {
+		has_building_or_higher = palace_01
+		culture = {
+			OR = {
+				has_innovation = innovation_crop_rotation
+				has_cultural_parameter = next_level_guild_halls
+			}
+		}
+	}
+	
+	cost_gold = main_building_tier_2_cost
+	character_modifier = {
+		monthly_prestige = 0.5
+		diplomatic_range_mult = 0.10
+	}
+	province_modifier = {
+		monthly_income = good_building_tax_tier_2
+	}
+
+	flag = demd_goods_building
+	flag = demd_goods_building_02
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_02 }
+		reset_regular_building_vars = yes
+	}
+
+	next_building = luxury_goods_03
+}
+
+luxury_goods_03 = {
+	construction_time = slow_construction_time
+	can_construct = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+		has_building_or_higher = palace_02
+		culture = {
+			OR = {
+				has_innovation = innovation_manorialism
+				AND = {
+					has_innovation = innovation_crop_rotation
+					has_cultural_parameter = next_level_guild_halls
+				}
+			}
+		}
+	}
+	
+	cost_gold = main_building_tier_3_cost
+	character_modifier = {
+		monthly_prestige = 0.75
+		diplomatic_range_mult = 0.15
+	}
+	province_modifier = {
+		monthly_income = good_building_tax_tier_3
+	}
+
+	flag = demd_goods_building
+	flag = demd_goods_building_03
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_03 }
+		reset_regular_building_vars = yes
+	}
+
+
+	next_building = luxury_goods_04
+}
+
+luxury_goods_04 = {
+	construction_time = slow_construction_time
+	can_construct = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+		has_building_or_higher = palace_02
+		culture = {
+			OR = {
+				has_innovation = innovation_manorialism
+				AND = {
+					has_innovation = innovation_crop_rotation
+					has_cultural_parameter = next_level_guild_halls
+				}
+			}
+		}
+	}
+	
+	cost_gold = main_building_tier_4_cost
+	character_modifier = {
+		monthly_prestige = 1.0
+		diplomatic_range_mult = 0.20
+	}
+	province_modifier = {
+		monthly_income = good_building_tax_tier_4
+	}
+
+	flag = demd_goods_building
+	flag = demd_goods_building_04
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_04 }
+		reset_regular_building_vars = yes
+	}
+
+
+	next_building = luxury_goods_05
+}
+
+luxury_goods_05 = {
+	construction_time = slow_construction_time
+	
+	can_construct_potential = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+		has_building_or_higher = palace_03
+		culture = {
+			OR = {
+				has_innovation = innovation_windmills
+				AND = {
+					has_innovation = innovation_manorialism
+					has_cultural_parameter = next_level_guild_halls
+				}
+			}
+		}
+	}
+	
+	cost_gold = 1000
+	character_modifier = {
+		monthly_prestige = 1.25
+		diplomatic_range_mult = 0.25
+	}
+	province_modifier = {
+		monthly_income = good_building_tax_tier_5
+	}
+
+	flag = demd_goods_building
+	flag = demd_goods_building_05
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_05 }
+		reset_regular_building_vars = yes
+	}
+
+
+	next_building = luxury_goods_06
+}
+
+luxury_goods_06 = {
+	construction_time = slow_construction_time
+	can_construct_potential = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+		has_building_or_higher = palace_03
+		culture = {
+			OR = {
+				has_innovation = innovation_windmills
+				AND = {
+					has_innovation = innovation_manorialism
+					has_cultural_parameter = next_level_guild_halls
+				}
+			}
+		}
+	}
+	
+	cost_gold = 1250
+	character_modifier = {
+		monthly_prestige = 1.5
+		diplomatic_range_mult = 0.30
+	}
+	province_modifier = {
+		monthly_income = good_building_tax_tier_6
+	}
+
+	flag = demd_goods_building
+	flag = demd_goods_building_06
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_06 }
+		reset_regular_building_vars = yes
+	}
+
+
+	next_building = luxury_goods_07
+}
+
+luxury_goods_07 = {
+	construction_time = slow_construction_time
+	can_construct_potential = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+		has_building_or_higher = palace_04
+		culture = {
+			OR = {
+				has_innovation = innovation_cranes
+				AND = {
+					has_innovation = innovation_windmills
+					has_cultural_parameter = next_level_guild_halls
+				}
+			}
+		}
+	}
+	
+	cost_gold = 1500
+	character_modifier = {
+		monthly_prestige = 1.75
+		diplomatic_range_mult = 0.35
+	}
+	province_modifier = {
+		monthly_income = good_building_tax_tier_7
+	}
+
+	flag = demd_goods_building
+	flag = demd_goods_building_07
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_07 }
+		reset_regular_building_vars = yes
+	}
+
+
+	next_building = luxury_goods_08
+}
+
+luxury_goods_08 = {
+	construction_time = slow_construction_time
+	can_construct_potential = {
+		NOT = {
+			has_ruins_trigger = yes
+		}
+		has_building_or_higher = palace_04
+		culture = {
+			OR = {
+				has_innovation = innovation_cranes
+				AND = {
+					has_innovation = innovation_windmills
+					has_cultural_parameter = next_level_guild_halls
+				}
+			}
+		}
+	}
+	
+	cost_gold = 2000
+	character_modifier = {
+		monthly_prestige = 2.0
+		diplomatic_range_mult = 0.40
+	}
+
+	flag = demd_goods_building
+	flag = demd_goods_building_08
+	on_complete = { 
+		change_variable = { name = building_goods_bonus add = demd_goods_building_08 }
+		reset_regular_building_vars = yes
+	}
+
+
+	province_modifier = {
+		monthly_income = good_building_tax_tier_8
+	}
+}
+
+library_01 = {
+	construction_time = slow_construction_time
+	
+	can_construct_potential = {
+		has_building_or_higher = palace_01
+	}
+	
+	cost_gold = main_building_tier_1_cost
+	next_building = library_02
+	
+	character_modifier = {
+		cultural_head_fascination_mult = 0.05
+	}
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_01
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_01 }
+		reset_regular_building_vars = yes
+	}
+
+
+	type_icon = "icon_building_library.dds"
+}
+
+library_02 = {
+	construction_time = slow_construction_time
+	
+	can_construct_potential = {
+		has_building_or_higher = palace_01
+		culture = {
+			has_innovation = innovation_city_planning
+		}
+	}
+	
+	cost_gold = main_building_tier_2_cost
+	next_building = library_03
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_02
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_02 }
+		reset_regular_building_vars = yes
+	}
+
+
+    character_modifier = {
+		cultural_head_fascination_mult = 0.10
+	}
+}
+
+library_03 = {
+	construction_time = slow_construction_time
+	
+	can_construct = {
+		has_building_or_higher = palace_03
+		culture = {
+			has_innovation = innovation_manorialism
+		}
+	}
+	
+	cost_gold = main_building_tier_3_cost
+	next_building = library_04
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_03
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_03 }
+		reset_regular_building_vars = yes
+	}
+
+
+	character_modifier = {
+		cultural_head_fascination_mult = 0.15
+	}
+}
+
+library_04 = {
+	construction_time = slow_construction_time
+	
+	can_construct = {
+		has_building_or_higher = palace_04
+		culture = {
+			has_innovation = innovation_manorialism
+		}
+	}
+	
+	cost_gold = main_building_tier_4_cost
+	next_building = library_05
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_04
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_04 }
+		reset_regular_building_vars = yes
+	}
+
+
+	character_modifier = {
+		cultural_head_fascination_mult = 0.20
+	}
+}
+
+library_05 = {
+	construction_time = slow_construction_time
+	
+	can_construct = {
+		has_building_or_higher = palace_03
+		culture = {
+			has_innovation = innovation_windmills
+		}
+	}
+	
+	cost_gold = 1000
+	next_building = library_06
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_05
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_05 }
+		reset_regular_building_vars = yes
+	}
+
+
+	character_modifier = {
+		cultural_head_fascination_mult = 0.25
+	}
+}
+
+library_06 = {
+	construction_time = slow_construction_time
+	
+	can_construct = {
+		has_building_or_higher = palace_03
+		culture = {
+			has_innovation = innovation_windmills
+		}
+	}
+	
+	cost_gold = 1250
+	next_building = library_07
+
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_06
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_06 }
+		reset_regular_building_vars = yes
+	}
+
+
+	character_modifier = {
+		cultural_head_fascination_mult = 0.30
+	}
+}
+
+library_07 = {
+	construction_time = slow_construction_time
+	
+	can_construct = {
+		has_building_or_higher = palace_04
+		culture = {
+			has_innovation = innovation_cranes
+		}
+	}
+	
+	cost_gold = 1500
+	next_building = library_08
+
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_07
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_07 }
+		reset_regular_building_vars = yes
+	}
+
+
+	character_modifier = {
+		cultural_head_fascination_mult = 0.35
+	}
+}
+
+library_08 = {
+	construction_time = slow_construction_time
+	
+	can_construct = {
+		has_building_or_higher = palace_04
+		culture = {
+			has_innovation = innovation_cranes
+		}
+	}
+	
+	cost_gold = 2000
+	
+    	flag = demd_sanitation_building
+	flag = demd_sanitation_building_08
+	on_complete = { 
+		change_variable = { name = building_sanitation_bonus add = demd_sanitation_building_08 }
+		reset_regular_building_vars = yes
+	}
+
+
+	character_modifier = {
+		cultural_head_fascination_mult = 0.40
+	}
+}
+
+mint_01 = {
+
+	can_construct_potential = {
+		has_building_or_higher = palace_01
+		county = {
+			NOT = {
+				any_county_province = {
+					has_building = mint_01 
+				}
+			}
+		}
+	}
+	
+    construction_time = slow_construction_time
+    
+    cost_gold = main_building_tier_1_cost
+    next_building = mint_02
+    
+    province_modifier = {
+        tax_mult = 0.05
+		development_growth_factor = 0.05
+		monthly_county_control_change_factor = 0.05
+    }
+    
+	flag = demd_trade_value_building
+	flag = demd_trade_value_building_01
+	on_complete = { 
+		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_01 }
+		reset_regular_building_vars = yes
+	}
+
+
+    type_icon = "icon_building_tax_assessor.dds"
+}
+
+mint_02 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_02
+		culture = {
+			has_innovation = innovation_currency_01	
+		}
+	}
+	
+    cost_gold = main_building_tier_2_cost
+    next_building = mint_03
+    
+	flag = demd_trade_value_building
+	flag = demd_trade_value_building_02
+	on_complete = { 
+		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_02 }
+		reset_regular_building_vars = yes
+	}
+
+
+    province_modifier = {
+        tax_mult = 0.1
+		development_growth_factor = 0.08
+		monthly_county_control_change_factor = 0.1
+    }
+
+}
+
+mint_03 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_03
+		culture = {
+			has_innovation = innovation_currency_02	
+		}
+	}
+	
+    cost_gold = main_building_tier_3_cost
+    next_building = mint_04
+    
+	flag = demd_trade_value_building
+	flag = demd_trade_value_building_03
+	on_complete = { 
+		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_03 }
+		reset_regular_building_vars = yes
+	}
+
+
+    province_modifier = {
+        tax_mult = 0.15
+		development_growth_factor = 0.12
+		monthly_county_control_change_factor = 0.12
+    }
+    
+}
+
+mint_04 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_04
+		culture = {
+			has_innovation = innovation_currency_03	
+		}
+	}
+	
+    cost_gold = main_building_tier_4_cost
+    
+    province_modifier = {
+        tax_mult = 0.2
+		development_growth_factor = 0.15
+		monthly_county_control_change_factor = 0.18
+		
+    }
+
+	flag = demd_trade_value_building
+	flag = demd_trade_value_building_04
+	on_complete = { 
+		change_variable = { name = building_trade_value_bonus add = demd_trade_value_building_04 }
+		reset_regular_building_vars = yes
+	}
+
+	
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.05
+	}
+    
+}
+
+embassy_01 = {
+	can_construct_potential = {
+		has_building_or_higher = palace_01
+		county = {
+			NOT = {
+				any_county_province = {
+					has_building = embassy_01 
+				}
+			}
+		}
+	}
+	
+    construction_time = slow_construction_time
+    
+    cost_gold = main_building_tier_1_cost
+    next_building = embassy_02
+    
+    character_modifier = {
+		monthly_prestige = 0.2
+		monthly_dynasty_prestige = 0.5
+	}
+    
+    type_icon = "icon_building_military_academy.dds"
+}
+
+embassy_02 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_02
+		culture = {
+			has_innovation = innovation_ledger	
+		}
+	}
+	
+    cost_gold = main_building_tier_2_cost
+    next_building = embassy_03
+    
+    character_modifier = {
+		monthly_prestige = 0.4
+		monthly_dynasty_prestige = 0.75
+	}
+
+}
+
+embassy_03 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_03
+		culture = {
+			has_innovation = innovation_development_02	
+		}
+	}
+	
+    cost_gold = main_building_tier_3_cost
+    next_building = embassy_04
+    
+    character_modifier = {
+		monthly_prestige = 0.6
+		monthly_dynasty_prestige = 1
+	}
+
+}
+
+embassy_04 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_04
+	}
+	
+    cost_gold = main_building_tier_4_cost
+    
+    character_modifier = {
+		monthly_prestige = 1
+		monthly_dynasty_prestige = 1.2
+		different_culture_opinion = 10
+		opinion_of_different_culture = 10
+	}
+    
+}
+
+
+fencing_School_01 = {
+	can_construct_potential = {
+		county = {
+			NOT = {
+				any_county_province = {
+					has_building = fencing_School_01 
+				}
+			}
+		}
+	}
+	
+    construction_time = slow_construction_time
+    
+    cost_gold = main_building_tier_1_cost
+    next_building = fencing_School_02
+    
+    character_modifier = {
+		monthly_prestige_gain_per_knight_mult = 0.02
+		knight_effectiveness_mult = 0.05
+	}
+    
+	flag = demd_manpower_building
+	flag = demd_manpower_building_01
+	on_complete = { 
+		change_variable = { name = building_manpower_bonus add = demd_manpower_building_01 }
+		reset_regular_building_vars = yes
+	}
+
+
+    type_icon = "icon_building_military_academy.dds"
+}
+
+fencing_School_02 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_02
+		culture = {
+			has_innovation = innovation_house_soldiers
+		}
+	}
+	
+    cost_gold = main_building_tier_2_cost
+    next_building = fencing_School_03
+    
+	flag = demd_manpower_building
+	flag = demd_manpower_building_02
+	on_complete = { 
+		change_variable = { name = building_manpower_bonus add = demd_manpower_building_02 }
+		reset_regular_building_vars = yes
+	}
+
+
+    character_modifier = {
+		monthly_prestige_gain_per_knight_mult = 0.03
+		knight_effectiveness_mult = 0.1
+	}
+
+}
+
+fencing_School_03 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_03
+	}
+	
+    cost_gold = main_building_tier_3_cost
+    next_building = fencing_School_04
+    
+	flag = demd_manpower_building
+	flag = demd_manpower_building_03
+	on_complete = { 
+		change_variable = { name = building_manpower_bonus add = demd_manpower_building_03 }
+		reset_regular_building_vars = yes
+	}
+
+
+    character_modifier = {
+		monthly_prestige_gain_per_knight_mult = 0.04
+		knight_effectiveness_mult = 0.15
+	}
+    
+}
+
+fencing_School_04 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		has_building_or_higher = palace_04
+		culture = {
+			has_innovation = innovation_men_at_arms
+		}
+	}
+	
+    cost_gold = main_building_tier_4_cost
+    
+	flag = demd_manpower_building
+	flag = demd_manpower_building_04
+	on_complete = { 
+		change_variable = { name = building_manpower_bonus add = demd_manpower_building_04 }
+		reset_regular_building_vars = yes
+	}
+
+
+    character_modifier = {
+		monthly_prestige_gain_per_knight_mult = 0.05
+		knight_effectiveness_mult = 0.2
+	}
+    
+}
+
+gh_university_01 = {
+	can_construct_potential = {
+		county = {
+			NOT = {
+				any_county_province = {
+					has_building = gh_university_01 
+				}
+			}
+		}
+		building_requirement_tribal = no
+		building_university_requirement = yes
+	}
+	
+    construction_time = slow_construction_time
+    
+    cost_gold = main_building_tier_1_cost
+    next_building = gh_university_02
+    
+    character_modifier = {
+		learning = 1
+		learning_scheme_power = 5
+	}
+    
+	flag = demd_public_order_building
+	flag = demd_public_order_building_01
+	on_complete = { 
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_01 }
+		reset_regular_building_vars = yes
+	}
+
+
+    type_icon = "icon_building_university.dds"
+}
+
+gh_university_02 = {
+    construction_time = slow_construction_time
+    
+	can_construct = {
+		culture = {
+			has_innovation = innovation_chronicle_writing
+		}
+		has_building_or_higher = palace_02
+	}
+	
+    cost_gold = main_building_tier_2_cost
+    next_building = gh_university_03
+    
+	flag = demd_public_order_building
+	flag = demd_public_order_building_02
+	on_complete = { 
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_02 }
+		reset_regular_building_vars = yes
+	}
+
+
+    character_modifier = {
+		learning = 2
+		learning_scheme_power = 10
+	}
+}
+
+gh_university_03 = {
+    construction_time = slow_construction_time
+    
+	can_construct_potential = {
+		culture = {
+			has_innovation = innovation_windmills
+		}
+		has_building_or_higher = palace_03
+	}
+	
+    cost_gold = main_building_tier_3_cost
+    next_building = gh_university_04
+    
+	flag = demd_public_order_building
+	flag = demd_public_order_building_03
+	on_complete = { 
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_03 }
+		reset_regular_building_vars = yes
+	}
+
+
+    character_modifier = {
+		learning = 3
+		learning_scheme_power = 15
+	}
+    
+}
+
+gh_university_04 = {
+    construction_time = slow_construction_time
+    
+	can_construct_potential = {
+		culture = {
+			has_innovation = innovation_development_04
+		}
+		has_building_or_higher = palace_04
+	}
+	
+    cost_gold = main_building_tier_4_cost
+    
+	flag = demd_public_order_building
+	flag = demd_public_order_building_04
+	on_complete = { 
+		change_variable = { name = building_public_order_bonus add = demd_public_order_building_04 }
+		reset_regular_building_vars = yes
+	}
+
+
+    character_modifier = {
+		learning = 4
+		learning_scheme_power = 20
+	}
+    
+}
+

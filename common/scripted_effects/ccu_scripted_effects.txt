@@ -1,0 +1,43 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+ccu_initialize_culture = {
+	ccu_initialize_heritage_group = yes
+	ccu_initialize_heritage_family = yes
+	ccu_initialize_language_group = yes
+	ccu_initialize_language_family = yes
+	ccu_initialize_language_union = yes
+}
+
+ccu_initialize_heritage_group = {
+	set_variable = { name = heritage_group value = flag:none }
+}
+
+
+
+ccu_initialize_heritage_family = {
+	set_variable = { name = heritage_family value = flag:none }
+}
+
+
+
+ccu_initialize_language_group = {
+	set_variable = { name = language_group value = flag:none }
+}
+
+
+
+ccu_initialize_language_family = {
+	set_variable = { name = language_family value = flag:none }
+}
+
+
+
+ccu_initialize_language_union = {
+	set_variable = { name = language_union value = flag:none }
+}
+

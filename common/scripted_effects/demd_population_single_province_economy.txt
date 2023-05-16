@@ -1,0 +1,287 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+cultureEconomy = {
+    set_variable = { name = food_cultural_production_mult value = 0 }
+    set_variable = { name = goods_cultural_production_mult value = 0 }
+    set_variable = { name = knight_capacity_cultural_production_mult value = 0 }
+    set_variable = { name = manpower_cultural_production_mult value = 0 }
+    set_variable = { name = public_order_cultural_production_mult value = 0 }
+    set_variable = { name = sanitation_cultural_production_mult value = 0 }
+    set_variable = { name = trade_power_cultural_production_mult value = 0 }
+    set_variable = { name = trade_value_cultural_production_mult value = 0 }
+    set_variable = { name = food_districts_cultural_production_mult value = 0 }
+    set_variable = { name = birth_rate_cultural_production_mult value = 0 }
+    set_variable = { name = vigor_cultural_production_mult value = 0 }
+	set_variable = { name = culture_advancement value = culture_advancement }	
+	set_variable = { name = culture_population value = culture_population }
+	set_variable = { name = dominant_faith value = calc_culture_dominant_faith }
+	if = { limit = { NOT = { has_variable = vigor } } set_variable = { name = vigor value = vigor_target } } 
+	change_variable = { name = vigor add = vigor_delta }
+	clamp_variable = { name = vigor min = 0 max = 100 }
+	if = { 
+		limit = { 
+			var:vigor < 10 
+			NOT = { has_variable = reformation_blocked }
+		}
+		random_list = {
+			80 = { }
+			20 = { culture_head = { trigger_event = demd_vigor.0001 } }
+		}
+	}
+}
+
+empire_title_pulse = {
+	if = {
+		limit = { is_title_created = yes }
+		set_variable = { name = title_population value = demd_title_population }
+		if = { 
+			limit = { NOT = { has_variable = imperial_decay } } 
+			set_variable = { name = imperial_decay value = 0 } 
+		}
+		else = { 
+			change_variable = { name = imperial_decay add = imperial_decay_delta } 
+			clamp_variable = { name = imperial_decay min = 0 max = imperial_decay_max }
+		}
+	}	
+	else = { set_variable = { name = imperial_decay value = 0 } }
+}
+
+faithEconomy = {
+    set_variable = { name = food_faith_production_mult value = 0 }
+    set_variable = { name = fervor_faith_production_mult value = 0 }
+    set_variable = { name = vigor_faith_production_mult value = 0 }
+    set_variable = { name = goods_faith_production_mult value = 0 }
+    set_variable = { name = knight_capacity_faith_production_mult value = 0 }
+    set_variable = { name = manpower_faith_production_mult value = 0 }
+    set_variable = { name = public_order_faith_production_mult value = 0 }
+    set_variable = { name = sanitation_faith_production_mult value = 0 }
+    set_variable = { name = trade_power_faith_production_mult value = 0 }
+    set_variable = { name = trade_value_faith_production_mult value = 0 }
+    set_variable = { name = birth_rate_faith_production_mult value = 0 }
+    set_variable = { name = food_districts_faith_production_mult value = 0 }
+	if = {
+		limit = { has_doctrine = tenet_armed_pilgrimages }
+		change_variable = { name = manpower_faith_production_mult add = 0.10 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_communion }
+		change_variable = { name = public_order_faith_production_mult add = 0.05 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_ritual_hospitality }
+		change_variable = { name = public_order_faith_production_mult add = 0.05 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_sanctity_of_nature }
+		change_variable = { name = food_faith_production_mult add = 0.10 }
+		change_variable = { name = goods_faith_production_mult add = -0.10 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_legalism }
+		change_variable = { name = public_order_faith_production_mult add = 0.05 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_dharmic_pacifism }
+		change_variable = { name = manpower_faith_production_mult add = -0.20 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_hedonistic }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_human_sacrifice }
+		change_variable = { name = public_order_faith_production_mult add = -0.10 }
+		change_variable = { name = fervor_faith_production_mult add = -3.00 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_carnal_exaltation }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_communal_identity }
+		change_variable = { name = vigor_faith_production_mult add = 4.00 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_divine_marriage }
+		change_variable = { name = birth_rate_faith_production_mult add = -0.15 }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_vows_of_poverty }
+		change_variable = { name = trade_value_faith_production_mult add = -0.20 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_warmonger }
+		change_variable = { name = manpower_faith_production_mult add = 0.10 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_adaptive }
+		change_variable = { name = fervor_faith_production_mult add = -5.00 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_sacred_childbirth }
+		change_variable = { name = sanitation_faith_production_mult add = 0.05 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_pacifism }
+		change_variable = { name = manpower_faith_production_mult add = -0.20 }
+	}
+	if = {
+		limit = { has_doctrine = tenet_pastoral_isolation }
+		change_variable = { name = trade_power_faith_production_mult add = -0.20 }
+	}
+}
+
+apply_province_levy = {
+	set_variable = { 
+		name = temp 
+		value = var:levy 
+	}
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_huge
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_big
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_medium
+    remove_all_province_modifier_instances = demd_prov_levy_modifier_small
+	if = {
+		limit = { building_levies > 45 }
+		while = {
+			limit = { var:temp > demd_prov_levy_huge } 
+			add_province_modifier = demd_prov_levy_modifier_huge
+			change_variable = { name = temp subtract = demd_prov_levy_huge }
+		}
+		while = {
+			limit = { var:temp > prev.demd_prov_levy_big }
+			add_province_modifier = demd_prov_levy_modifier_big
+			change_variable = { name = temp subtract = demd_prov_levy_big }
+		}
+		while = {
+			limit = { var:temp > prev.demd_prov_levy_medium } 
+			add_province_modifier = demd_prov_levy_modifier_medium
+			change_variable = { name = temp subtract = demd_prov_levy_medium }
+		}
+		while = {
+			limit = { var:temp > prev.demd_prov_levy_small } 
+			add_province_modifier = demd_prov_levy_modifier_small
+			change_variable = { name = temp subtract = demd_prov_levy_small }
+		}
+	}
+}
+
+setEdicts = {
+	if = {
+		limit = { 
+			county.county_opinion < -15	
+			var:manpower_setting < var:tax_setting
+			NOT = { has_variable = tax_setting_changed }
+		}
+		demd_decrement_edict_setting = { TYPE = tax }
+	}
+	else_if = {
+		limit = { 
+			county.county_opinion > 15	
+			var:manpower_setting >= var:tax_setting
+			NOT = { has_variable = tax_setting_changed }
+		}
+		demd_increment_edict_setting = { TYPE = tax }
+	}
+	if = {
+		limit = {
+			county.county_opinion < -15	
+			var:manpower_setting >= var:tax_setting 
+			NOT = { has_variable = manpower_setting_changed }
+		}
+		demd_decrement_edict_setting = { TYPE = manpower }
+	}
+	else_if = {
+		limit = {
+			county.county_opinion > 15	
+			var:manpower_setting < var:tax_setting 
+			NOT = { has_variable = manpower_setting_changed }
+		}
+		demd_increment_edict_setting = { TYPE = manpower }
+	}
+	set_variable = { name = temp value = demd_amenity_level_expected }
+	if = {
+		limit = { NOT = { has_variable = public_order_setting_changed } }
+		if = {
+			limit = { var:public_order_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = public_order }
+		}
+		else_if = {
+			limit = { var:public_order_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = public_order }
+		}
+	}
+	if = {
+		limit = { NOT = { has_variable = sanitation_setting_changed } }
+		if = {
+			limit = { var:sanitation_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = sanitation }
+		}
+		else_if = {
+			limit = { var:sanitation_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = sanitation }
+		}	
+	}
+	if = {
+		limit = { NOT = { has_variable = irrigation_setting_changed } }
+		if = {
+			limit = { var:irrigation_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = irrigation }
+		}
+		else_if = {
+			limit = { var:irrigation_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = irrigation }
+		}
+	}
+	if = {
+		limit = { NOT = { has_variable = infrastructure_setting_changed } }
+		if = {
+			limit = { var:infrastructure_setting < var:temp }
+			demd_increment_edict_setting = { TYPE = infrastructure }
+		}
+		else_if = {
+			limit = { var:infrastructure_setting > var:temp }
+			demd_decrement_edict_setting = { TYPE = infrastructure }
+		}
+	}
+}
+
+apply_province_garrison = {
+	set_variable = { 
+		name = temp 
+		value = var:garrison 
+	}
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_huge
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_big
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_medium
+    remove_all_province_modifier_instances = demd_prov_garrison_modifier_small
+	if = {
+		limit = { building_max_garrison > 45 }
+		while = {
+			limit = { var:temp > demd_prov_garrison_huge }
+			add_province_modifier = demd_prov_garrison_modifier_huge
+			change_variable = { name = temp subtract = demd_prov_garrison_huge }
+		}
+		while = {
+			limit = { var:temp > demd_prov_garrison_big } 
+			add_province_modifier = demd_prov_garrison_modifier_big
+			change_variable = { name = temp subtract = demd_prov_garrison_big }
+		}
+		while = {
+			limit = { var:temp > demd_prov_garrison_medium } 
+			add_province_modifier = demd_prov_garrison_modifier_medium
+			change_variable = { name = temp subtract = demd_prov_garrison_medium }
+		}
+		while = {
+			limit = { var:temp > demd_prov_garrison_small } 
+			add_province_modifier = demd_prov_garrison_modifier_small
+			change_variable = { name = temp subtract = demd_prov_garrison_small }
+		}
+	}
+}
+

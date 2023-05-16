@@ -1,0 +1,12 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+ccu_dummy = {
+	scope = province
+	effect = {
+	}
+}

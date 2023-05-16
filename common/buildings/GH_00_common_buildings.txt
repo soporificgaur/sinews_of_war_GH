@@ -1,0 +1,27 @@
+﻿@holding_illustration_wasteland = "gfx/interface/illustrations/holding_types/holding_empty.dds"
+
+####################
+# Misc Buildings #
+####################
+
+empty_building = {
+	construction_time = quick_construction_time
+
+	type_icon = "icon_building_empty_building.dds"
+	
+	can_construct_potential = {
+		always = no 	# Absolutely never, ever outside events
+	}
+	
+	can_construct = {	
+		always = no
+	}
+	
+	can_construct_showing_failures_only = {
+		always = no
+	}
+	
+	ai_value = {
+		base = 0
+	}
+}

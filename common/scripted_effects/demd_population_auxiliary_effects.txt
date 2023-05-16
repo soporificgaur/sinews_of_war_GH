@@ -1,0 +1,105 @@
+﻿#############################################
+# DEMD Population System
+# by Vertimnus
+# This file was compiled by a machine from jomini metascript source code.
+# It should never be manually edited.
+#############################################
+
+demd_swap_low_vigor_traditions = {
+	set_variable = { name = temp value = 0 }
+	while = { limit = { var:temp > 0 }
+		add_random_valid_tradition_replace_if_necessary = culture_head
+		change_variable = { name = temp subtract = 1 }
+	}
+}
+
+demd_swap_low_vigor_tenets = {
+	set_variable = { name = temp value = 0 }
+	while = { limit = { var:temp > 0 }
+		add_random_valid_tradition_replace_if_necessary = culture_head
+		change_variable = { name = temp subtract = 1 }
+	}
+}
+
+demd_initialize_all_trade_node_struggles = {
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_western_marcher_kingdoms start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_western_marcher_kingdoms = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_western_marcher_kingdoms } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_western_marcher_kingdoms }
+	add_to_global_variable_list = { name = trade_nodes_group_m_1 target = struggle:demd_trade_node_struggle_world_ga_western_marcher_kingdoms }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_eastern_marcher_kingdoms start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_eastern_marcher_kingdoms = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_eastern_marcher_kingdoms } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_eastern_marcher_kingdoms }
+	add_to_global_variable_list = { name = trade_nodes_group_m_2 target = struggle:demd_trade_node_struggle_world_ga_eastern_marcher_kingdoms }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_eastern_clanlands start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_eastern_clanlands = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_eastern_clanlands } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_eastern_clanlands }
+	add_to_global_variable_list = { name = trade_nodes_group_m_3 target = struggle:demd_trade_node_struggle_world_ga_eastern_clanlands }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_western_clanlands start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_western_clanlands = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_western_clanlands } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_western_clanlands }
+	add_to_global_variable_list = { name = trade_nodes_group_m_4 target = struggle:demd_trade_node_struggle_world_ga_western_clanlands }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_mayikprolollan start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_mayikprolollan = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_mayikprolollan } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_mayikprolollan }
+	add_to_global_variable_list = { name = trade_nodes_group_m_5 target = struggle:demd_trade_node_struggle_world_ga_mayikprolollan }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_western_aversaria start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_western_aversaria = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_western_aversaria } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_western_aversaria }
+	add_to_global_variable_list = { name = trade_nodes_group_m_6 target = struggle:demd_trade_node_struggle_world_ga_western_aversaria }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_northern_aversaria start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_northern_aversaria = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_northern_aversaria } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_northern_aversaria }
+	add_to_global_variable_list = { name = trade_nodes_group_m_7 target = struggle:demd_trade_node_struggle_world_ga_northern_aversaria }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_central_aversaria start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_central_aversaria = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_central_aversaria } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_central_aversaria }
+	add_to_global_variable_list = { name = trade_nodes_group_m_8 target = struggle:demd_trade_node_struggle_world_ga_central_aversaria }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_aironoi start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_aironoi = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_aironoi } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_aironoi }
+	add_to_global_variable_list = { name = trade_nodes_group_m_9 target = struggle:demd_trade_node_struggle_world_ga_aironoi }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_foglands start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_foglands = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_foglands } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_foglands }
+	add_to_global_variable_list = { name = trade_nodes_group_m_10 target = struggle:demd_trade_node_struggle_world_ga_foglands }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ga_kashirya start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ga_kashirya = { demd_trade_node_struggle_setup_effect = { REGION = world_ga_kashirya } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ga_kashirya }
+	add_to_global_variable_list = { name = trade_nodes_group_m_11 target = struggle:demd_trade_node_struggle_world_ga_kashirya }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_es_desert start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_es_desert = { demd_trade_node_struggle_setup_effect = { REGION = world_es_desert } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_es_desert }
+	add_to_global_variable_list = { name = trade_nodes_group_m_12 target = struggle:demd_trade_node_struggle_world_es_desert }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_es_eastern_coast start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_es_eastern_coast = { demd_trade_node_struggle_setup_effect = { REGION = world_es_eastern_coast } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_es_eastern_coast }
+	add_to_global_variable_list = { name = trade_nodes_group_m_13 target = struggle:demd_trade_node_struggle_world_es_eastern_coast }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_es_hajjan_mountains start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_es_hajjan_mountains = { demd_trade_node_struggle_setup_effect = { REGION = world_es_hajjan_mountains } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_es_hajjan_mountains }
+	add_to_global_variable_list = { name = trade_nodes_group_m_14 target = struggle:demd_trade_node_struggle_world_es_hajjan_mountains }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_es_damota start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_es_damota = { demd_trade_node_struggle_setup_effect = { REGION = world_es_damota } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_es_damota }
+	add_to_global_variable_list = { name = trade_nodes_group_m_15 target = struggle:demd_trade_node_struggle_world_es_damota }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_cs_usfeh start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_cs_usfeh = { demd_trade_node_struggle_setup_effect = { REGION = world_cs_usfeh } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_cs_usfeh }
+	add_to_global_variable_list = { name = trade_nodes_group_m_16 target = struggle:demd_trade_node_struggle_world_cs_usfeh }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_cs_udhaliyya start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_cs_udhaliyya = { demd_trade_node_struggle_setup_effect = { REGION = world_cs_udhaliyya } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_cs_udhaliyya }
+	add_to_global_variable_list = { name = trade_nodes_group_m_17 target = struggle:demd_trade_node_struggle_world_cs_udhaliyya }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ws_amsari start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ws_amsari = { demd_trade_node_struggle_setup_effect = { REGION = world_ws_amsari } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ws_amsari }
+	add_to_global_variable_list = { name = trade_nodes_group_m_18 target = struggle:demd_trade_node_struggle_world_ws_amsari }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ws_kamsaria start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ws_kamsaria = { demd_trade_node_struggle_setup_effect = { REGION = world_ws_kamsaria } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ws_kamsaria }
+	add_to_global_variable_list = { name = trade_nodes_group_m_19 target = struggle:demd_trade_node_struggle_world_ws_kamsaria }
+	start_struggle = { struggle_type = demd_trade_node_struggle_world_ws_ayyar start_phase = demd_trade_node_struggle_phase_opportunity }
+	struggle:demd_trade_node_struggle_world_ws_ayyar = { demd_trade_node_struggle_setup_effect = { REGION = world_ws_ayyar } }
+	add_to_global_variable_list = { name = trade_nodes_global target = struggle:demd_trade_node_struggle_world_ws_ayyar }
+	add_to_global_variable_list = { name = trade_nodes_group_m_20 target = struggle:demd_trade_node_struggle_world_ws_ayyar }
+}

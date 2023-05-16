@@ -1,0 +1,19 @@
+﻿l_english:
+ #SoW world regions
+ world_sow_pirate_coast:0 "Pirate Coast"
+ world_sow_n_kashirya:0 "Northern Kashirya" 
+ world_sow_s_kashirya:0 "Southern Kashirya"
+ world_sow_eastern_aironoi:0 "Eastern Aironoi" 
+ world_sow_western_aironoi:0 "Western Aironoi"
+ world_sow_great_steppe:0 "Great Steppe"
+ world_sow_amaghea:0 "Amaghea"
+ world_sow_krehejad:0 "Krehejad"
+ world_sow_redlands:0 "Redlands"
+ world_sow_opakhasia:0 "Opakhasia"
+ world_sow_malcois:0 "Malcois"
+ world_sow_etepezea:0 "Etepezea"
+ world_sow_aversarian_isles:0 "Aversarian Isles" 
+ the_western_isles:0 "Western Isles"
+ world_sow_southeast_sarradon:0 "South-East Sarradon"
+ world_sow_east_sarradon:0 "East Sarradon"
+

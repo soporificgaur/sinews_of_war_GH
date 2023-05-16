@@ -1,0 +1,190 @@
+﻿falcon_roost_01 = {
+	can_construct_potential = {
+		culture = { has_cultural_parameter = enable_falcon_roost_building }
+		building_hill_forts_requirement_terrain = yes
+	}
+	
+	construction_time = quick_construction_time
+	
+	cost_prestige = expensive_building_tier_1_cost
+	cost_gold = tribal_building_tier_1_cost
+	
+	character_modifier = {
+		monthly_piety = 0.25
+		diplomacy_per_piety_level = 1
+		monthly_prestige = 0.15
+	}
+	
+	next_building = falcon_roost_02
+
+	type_icon = "icon_building_royal_forest.dds"
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+falcon_roost_02 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		scope:holder.culture = { has_cultural_parameter = enable_falcon_roost_building }
+		building_hill_forts_requirement_terrain = yes
+	}
+	
+	cost_prestige = expensive_building_tier_2_cost
+	cost_gold = tribal_building_tier_2_cost
+	
+	character_modifier = {
+		monthly_piety = 0.5
+		diplomacy_per_piety_level = 1
+		monthly_prestige = 0.3
+	}
+
+	type_icon = "icon_building_royal_forest.dds"
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+dergi_garden_01 = {
+	can_construct_potential = {
+		culture = { has_cultural_parameter = enable_dergi_garden_building }
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	construction_time = slow_construction_time
+	
+	cost_gold = normal_building_tier_2_cost
+	
+	character_modifier = {
+		monthly_prestige_gain_mult = 0.1
+		stress_gain_mult = -0.10
+		stewardship_per_piety_level = 1
+	}
+
+	county_modifier = {
+		tax_mult = 0.05
+	}
+
+	next_building = dergi_garden_02
+	type = duchy_capital 
+	type_icon = "icon_building_royal_forest.dds"
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+dergi_garden_02 = {
+	can_construct_potential = {
+		culture = { has_cultural_parameter = enable_dergi_garden_building }
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	construction_time = slow_construction_time
+	
+	cost_gold = normal_building_tier_2_cost
+	
+	character_modifier = {
+		archers_damage_mult = 0.04
+		archers_toughness_mult = 0.08
+		archers_screen_mult = 0.03
+	}
+
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_3
+	}
+	type = duchy_capital
+	type_icon = "icon_building_royal_forest.dds"
+
+	next_building = dergi_garden_03
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+dergi_garden_03 = {
+	can_construct_potential = {
+		culture = { has_cultural_parameter = enable_dergi_garden_building }
+		building_requirement_castle_city_church = { LEVEL = 01 }
+	}
+	
+	construction_time = slow_construction_time
+	
+	cost_gold = normal_building_tier_1_cost
+	
+	character_modifier = {
+		monthly_piety = 0.5
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.05
+		county_opinion_add = 5
+	}
+	type = duchy_capital
+	type_icon = "icon_building_royal_forest.dds"
+	
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
+
+ reefmine_01 = {
+	construction_time = quick_construction_time
+
+	can_construct_potential = {
+		county = {
+			NOT = {
+				any_county_province = {
+					has_building_or_higher = reefmine_01 
+				}
+			}
+		}
+		scope:holder.culture = {
+			has_innovation = innovation_reefmining
+		}
+	}
+
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+	
+	cost_gold = normal_building_tier_1_cost
+	
+	province_modifier = {
+		monthly_income = poor_building_tax_tier_3
+		supply_limit = 500
+		levy_reinforcement_rate = 0.1
+	}
+	type_icon = "icon_building_i_dormitory.dds"
+	type = regular
+	ai_value = {
+		base = 8
+		ai_general_building_modifier = yes
+		ai_economical_building_preference_modifier = yes
+	}
+}
