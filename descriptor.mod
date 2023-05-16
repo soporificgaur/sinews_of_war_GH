@@ -1,7 +1,6 @@
-version="0.5"
+version="0.0.0"
 tags={
-	"Fixes"
 }
-name="My SoW + Godherja com patch"
-supported_version="1.8.1"
-remote_file_id="2904068624"
+name="SoW + Godherja com patch"
+supported_version="1.8.2"
+path="C:/Users/Gus/Documents/Paradox Interactive/Crusader Kings III/mod/my_mod"
